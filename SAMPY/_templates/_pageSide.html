@@ -1,0 +1,59 @@
+<div id="pageside" class="col l3 m3 s12 blue-grey darken-4" >
+
+	
+	  <div class="card blue-grey darken-3">
+	    <div class="card-image waves-effect waves-block waves-light">
+	      <img class="activator responsive-img circle" src="{{_config['profile_picture']}}">
+	    </div>
+	    <div class="card-content">
+	      <span class="card-title activator orange-text text-darken-4">{{_config["title"]}}<i class="material-icons right">more_vert</i></span>
+	      <!--<p><a href="#">This is a link</a></p>-->
+	    </div>
+	    <div class="card-reveal blue-grey darken-3">
+	      <span class="card-title orange-text text-darken-4">About<i class="material-icons right">close</i></span>
+	      <p class="white-text">{{_config["description"]}}</p>
+	      <i><a href="mailto:{{_config['email']}}">{{_config["email"]}}</a></i>
+	    </div>
+	  </div>
+
+    
+    <div id="soundcloud_embed" class="col l12 s12"></div>
+
+
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+  //Soundcloud playlist randomiser
+  var soundcloud_iframe = '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/hoaibkhan/sets/soundcloud&amp;auto_play=true&amp;buying=false&amp;sharing=false&amp;start_track='+ Math.floor(Math.random()*10) +'"> </iframe>'
+
+  soundcloud_iframe = '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/26604759&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true&amp;start_track='+Math.floor(Math.random()*10) +'"></iframe>'
+
+
+  // DONOT LOAD SOUNDCLOUD ON MOBILES, THEY DONT SUPORT AUTOPLAY AND KILL SPACE AND LOOKS
+  $( document ).ready(function()
+  {
+     if (isMobile.matches) {
+          //Conditional script here
+          console.log("---> Mobile Browser - from footer - soundcloud_iframe handler");
+          $("#soundcloud_embed").remove();
+
+      }
+      else
+      {
+        console.log("---> Desktop or Tablet Browser - from footer - soundcloud_iframe handler");
+        $("#soundcloud_embed").html(soundcloud_iframe);
+      }
+    
+  });
+
+
+</script>
+   
+
+
+

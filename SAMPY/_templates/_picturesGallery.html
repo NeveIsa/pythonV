@@ -1,0 +1,138 @@
+{% include '/_head.html' %}
+
+    <body>
+      <!--<div class="container">-->
+        <!-- Page Content goes here -->
+
+      <!-- Navbar goes here -->
+      <!--{% include '/_navbar.html' %}-->
+       
+      <!-- Navbar goes here -->
+
+      <div class="row" style="margin-bottom: 0px">
+
+        {% include '/_pageSide.html' %}
+
+        
+        <div id="pagemain" class="col l9 m9 s12 teal">
+
+          
+           <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+          </div>
+        
+
+
+      
+      </div>
+          
+        </div>
+
+
+      </div>
+
+
+    </body>
+
+{% include '/_footer.html' %}
+
+
+
+<script type="text/javascript">
+  //ENABLE CAROUSEL
+   $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+
+   setInterval(function(){$('.carousel').carousel('next');},3000)
+</script>
+
+<script type="text/javascript">
+  //PICTURE ALBUM AJAX FILL VIA API
+  /*function fillCarousel(data,status) {
+
+    if(status=="success")
+    {
+      console.log("---> Pictures Album");
+      console.log(data);
+
+      pictures_div=$("#picture_album")
+
+      //clear indeterminate div
+      pictures_div.html("");
+
+      //remove progres class
+      pictures_div.removeClass("progress")
+
+      //add carousel class
+      pictures_div.addClass("carousel")
+
+
+
+      for(var album in data)
+      {
+        pictures_div.append('<a class="carousel-item" href="#"><img src="'+data[album][0]+'"></a>')
+        //console.log(data[album])
+      }
+    }
+
+
+
+     //Carousel
+      $(document).ready(function(){
+            $('.carousel').carousel();
+          });
+
+  }
+
+  $.get(_API_URL+'?query={"data":"pictures"}',fillCarousel)*/
+
+</script>
+
+
+<script type="text/javascript">
+  //Auto adjust height of Sidebar and Main content
+
+  function AdjustHeight()
+  {
+    if (window.isMobile.matches) 
+    {
+          //Conditional script here
+          console.log("---> Mobile Browser - from AdjustHeight");
+        }
+        else
+        {
+          console.log("---> Desktop or Tablet Browser - from AdjustHeight")
+        
+      var pagesideElement=$("#pageside")
+      var pagemainElement=$("#pagemain")
+
+      var pagesideH=pagesideElement.height()
+      var pagemainH=pagemainElement.height()
+
+      var viewPortHeight = $(window).height(); //screen vertical height = vh
+
+      //get max height from the height of the two 
+      var max=pagesideH>pagemainH?pagesideH:pagemainH
+
+      //if max obtained before is less than the screen height, select max as window height
+      max=max>viewPortHeight?max:viewPortHeight
+
+      pagemainElement.height(max)
+      pagesideElement.height(max)
+    }
+  }
+
+
+  $( document ).ready(function()
+    {
+      setTimeout(AdjustHeight,0); //take care after 1s
+      setTimeout(AdjustHeight,50); //take care after 1s
+      setTimeout(AdjustHeight,200); //take care after 3s
+      setTimeout(AdjustHeight,300); //take care after 7s again, if missed after 3 seconds
+    })
+          
+
+</script>

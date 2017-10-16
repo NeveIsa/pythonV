@@ -1,0 +1,24 @@
+import requests
+import sys
+import random
+
+servername="localhost:9090"
+
+if len(sys.argv)>1:
+  servername=sys.argv[1]
+
+severname="http://"+servername
+
+
+random_device_id = "testing_device-" + str(random.randint(100,200))
+url=servername+"/api"
+payload={"action":"insert","payload":'{"device_id":"%s"}' % str(random_device_id) }
+print "Trying to INSERT data using random device_id:",random_device_id
+r=requests.get(servername+"/api")
+print "Server response:"
+print r.text
+
+
+payload={"action":"get","payload":'{"device_id"}'}
+print "\nAttempting to read from server"
+r=requests.get(servername+"/api",params=)

@@ -1,0 +1,61 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="/static/assets/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="/static/assets/jquery/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="/static/assets/materialize/js/materialize.min.js"></script>
+      <!--<script src="https://unpkg.com/vue"></script>-->
+    </body>
+  </html>
+
+
+  <script type="text/javascript">
+    //GLOBAL VARIABLES
+    var _API_URL=window.location.origin+"/api"
+    //alert(_API_URL);
+  </script>
+
+  <style type="text/css">
+  /*      header, main, footer {
+      padding-left: 300px;
+    }*/
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+      
+  </style>
+
+
+  <script type="text/javascript">
+  // DETECT IF MOBILE BROWER
+    
+  $( document ).ready(function() {      
+      var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+
+      window.isMobile=isMobile
+
+      if (isMobile.matches) {
+          //Conditional script here
+          console.log("---> Mobile Browser");
+      }
+      else
+      {
+        console.log("---> Desktop or Tablet Browser")
+      }
+   });
+</script>
+        
