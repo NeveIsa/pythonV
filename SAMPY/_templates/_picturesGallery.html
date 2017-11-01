@@ -11,23 +11,20 @@
 
       <div class="row" style="margin-bottom: 0px">
 
-        {% include '/_pageSide.html' %}
+          {% include '/_indexSide.html' %}
+
+
 
         
-        <div id="pagemain" class="col l9 m9 s12 teal">
+          <div id="pagemain" class="col l9 m9 s12 blue-grey darken-4 bgtexture">
 
-          
-           <div class="carousel carousel-slider">
-            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
-            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
-            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
-            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+
+
+
+
+              
+
           </div>
-        
-
-
-      
-      </div>
           
         </div>
 
@@ -43,41 +40,76 @@
 
 <script type="text/javascript">
   //ENABLE CAROUSEL
-   $('.carousel.carousel-slider').carousel({fullWidth: true});
-
+   $('.carousel').carousel({fullWidth: false});
+   //$('.carousel').carousel({fullWidth: true});
 
    setInterval(function(){$('.carousel').carousel('next');},3000)
 </script>
 
 <script type="text/javascript">
   //PICTURE ALBUM AJAX FILL VIA API
-  /*function fillCarousel(data,status) {
+  function fillCarousel(data,status) {
 
     if(status=="success")
     {
       console.log("---> Pictures Album");
       console.log(data);
 
-      pictures_div=$("#picture_album")
+      pictures_div=$("#pagemain")
 
       //clear indeterminate div
       pictures_div.html("");
 
       //remove progres class
-      pictures_div.removeClass("progress")
+      //pictures_div.removeClass("progress")
 
       //add carousel class
-      pictures_div.addClass("carousel")
+      //pictures_div.addClass("carousel")
 
+      //data["Hawai"]=data["Singapore"];
+      //data["Hawai2"]=data["Singapore"];
 
+      
 
       for(var album in data)
       {
-        pictures_div.append('<a class="carousel-item" href="#"><img src="'+data[album][0]+'"></a>')
+        //pictures_div.append('<a class="carousel-item" href="#"><img src="'+data[album][0]+'"></a>')
         //console.log(data[album])
-      }
-    }
 
+   
+        //console.log("***"+album)
+
+
+        var albums_html_content='<div class="card col l6 s12 blue-grey darken-3">\
+                        <div class="card-image waves-effect waves-block waves-light">\
+                        <!--<img class="activator" src="images/office.jpg">-->\
+                        <div class="carousel col s12">'
+
+              for (var imagesrc in data[album]["images"])   
+              {         
+                  albums_html_content+='<a class="carousel-item" href="#"><img src="'+data[album]["images"][imagesrc]+'"></a>'
+              }
+                  
+
+            albums_html_content+='</div>\
+                </div>\
+                <div class="card-content">\
+                  <span class="card-title activator grey-text">'+ album +'<i class="material-icons right">more_vert</i></span>\
+                  <!--<p><a href="#">This is a link</a></p>-->\
+                </div>\
+                <div class="card-reveal blue-grey darken-3">\
+                  <span class="card-title white-text">'+ album +'<i class="material-icons right">close</i></span>\
+                  <p class="white-text">'+data[album]["info"]+'</p>\
+                </div>\
+              </div>'
+
+
+              //albums_html_content="<h1>"+album+"</h1>"
+              pictures_div.append(albums_html_content);
+      }
+
+
+    }
 
 
      //Carousel
@@ -87,7 +119,7 @@
 
   }
 
-  $.get(_API_URL+'?query={"data":"pictures"}',fillCarousel)*/
+  $.get(_API_URL+'?query={"data":"pictures"}',fillCarousel)
 
 </script>
 

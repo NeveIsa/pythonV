@@ -16,9 +16,10 @@
 title: Sampad Mohanty
 email: smpdmohanty@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  I am Sampad and this is my personal website where I try to share my activities, discoveries, tutorials and interests.
+  An electrical engineer by education, my interests vary widely, mostly in science and technology, DIY, music, magic,
+  psychology, etc.
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
@@ -44,5 +45,8 @@ plugins:
 
 
 ### EXTENDED CONFIGS
-profile_picture: static/propic.jpg
-pictures_gallery: static/gallery/pictures
+profile_picture: /static/propic.jpg
+pictures_gallery: /static/gallery/pictures
+
+soundcloud_playlist_url: https://soundcloud.com/calvinkong-1/sets/assasins-creed-iii-original
+soundcloud_playlist_song_count: 10
