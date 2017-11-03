@@ -1,0 +1,75 @@
+
+<head>
+<title>
+nitrnalco.in
+</title>
+<link rel="shortcut icon" type="image/png" href="static/image/favicon.png"/>
+<style>
+body { 
+ background: url('') no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+
+.panel-default {
+ opacity: 4;
+}
+.container {
+   margin-left: 100px;
+   margin-right: 100px;
+}
+</style>
+<script src="static/js/jquery.min.js"></script>
+
+<script src="static/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+<!-- <script src="/static/js/TweenLite.min.js"></script> -->
+</head>
+
+<div class="container">
+<div class="row">
+<div class="col-md-5 col-md-offset-7">
+                         &nbsp &nbsp
+                                 <strong style="font-size:15px margin:auto">NITR-NALCO Air Pressure monitoring System</strong>
+                                 <hr>
+                                 &nbsp
+                                 <img src="static/image/favicon.png" style="height:37px;width:40px"> 
+                                 <strong><a href="http://nitrkl.ac.in" target="_blank">NIT Rourkela</a></strong>
+                                  &nbsp || &nbsp
+                                 <img src="static/image/images.jpg" style="height:27px;width:80px"> 
+                                 <strong><a href="http://nalcoindia.com/index.aspx" target="_blank">NALCO Angul</a></strong>
+                        </div>
+                        </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-7">
+            <div class="panel panel-default" style="border-color:black" >
+                <div class="panel-heading"> <strong color="white"> ${message} </strong>
+		
+                </div>
+                <div class="panel-body">
+                    <form action="/login" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-sm-3 control-label">Username</label>
+                            <div class="col-sm-9">
+                                <input type="username" name="username" class="form-control" id="input Username" placeholder="username" style="background-color:lightyellow" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" name="password" class="form-control" id="input Password" placeholder="password" style="background-color:lightyellow" required="">
+                            </div>
+                        </div>
+                        <div class="form-group last">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

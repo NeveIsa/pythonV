@@ -8,7 +8,8 @@ import datetime
 from pprint import pprint
 
 import uuid
-
+import glob
+import textile
 
 ### GLOBAL VARS ###
 
@@ -162,10 +163,18 @@ def render_post(post_name):
   #templateEnv = jinja2.Environment( loader=templateLoader )
   templateEnv = jinja2.Environment()
   try:
-    md_part,yaml_data=frontmatter("_posts/%s.md" % post_name)
-    html_post=gfm2html(md_part)
-   
-    
+
+    post_files=glob.glob("_posts/%s.*" % post_name)
+    if len(post_files)>0:
+      post_files.sort()
+      post_file=post_files[0]
+      if post_file.endswith(".md"):
+        md_part,yaml_data=frontmatter(post_file)
+        html_post=gfm2html(md_part)
+      elif post_file.endswith(".textile"):
+        textile_part,yaml_data=frontmatter(post_file)
+        html_post=textile.textile(textile_part)
+        
     _config["local"]=yaml_data
     return render("posts",_config=_config,_POSTContent=html_post)
     #return jinja2.Template(gfm2html(md_part)).render()

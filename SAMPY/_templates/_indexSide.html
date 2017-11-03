@@ -10,6 +10,9 @@
 	      <span class="card-title activator orange-text text-darken-4">{{_config["title"]}}<i class="material-icons right">more_vert</i></span>
 	      <!--<p><a href="#">This is a link</a></p>-->
 	    </div>
+
+      
+
 	    <div class="card-reveal blue-grey darken-3">
 	      <span class="card-title orange-text text-darken-4">About<i class="material-icons right">close</i></span>
 	      <p class="white-text" style="font-family: serif;">{{_config["description"]}}</p>
@@ -17,20 +20,26 @@
 	    </div>
 	  </div>
 
+
     <!-- QUOTE OF THE DAY -->
-    <div id="quoteoftheday" class="row">
+    <div id="quoteoftheday" class="row card-panel blue-grey darken-3">
       <div class="col s12">
-        <div class="card-panel blue-grey darken-3">
           <span class="white-text">I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
           </span>
-        </div>
       </div>
     </div>
 
-
     <!-- SOUNDCLOUD -->
-    <div id="soundcloud_embed" class="col l12 s12"></div>
+    <div id="soundcloud_embed" class="row"></div>
+
+    <div class="row blue-grey darken-3">
+      <div class="fb-like" data-href="https://sampy.in/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true" data-colorscheme="dark"></div>
+
+    </div>
+
+    
+
 
 
 
@@ -38,7 +47,18 @@
 
 
 
+<!-- FACEBOOK LIKE PLUGIN -->
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- FACEBOOK LIKE PLUGIN -->
 
 <script type="text/javascript">
   //Soundcloud playlist randomiser
