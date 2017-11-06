@@ -47,3 +47,8 @@ for count in range(100):
 	print("")
 
 print ("\ntest complete....")
+
+
+import os
+print("Give permission to rebuild/clean/clear the database")
+os.system("python ../model.py rebuild")

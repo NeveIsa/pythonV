@@ -17,15 +17,28 @@ import datetime
 def authUser(username,password):
 	with open("credentials.json") as f:
 		cred=json.loads(f.read().strip())
-	for user in cred:
-		if username in user:
-			if password==user[username]:
-				return True
-			else:
-				return False
+
+	if username in cred:
+		if password==cred[username]:
+			return True
+
 	return False
 
 
+
+def changePass(username,password_current,password_new):
+	with open("credentials.json") as f:
+		cred=json.loads(f.read().strip())
+	if username in cred:
+		if cred[username]==password_current:
+			cred[username]=password_new
+			with open("credentials.json",'w') as g:
+			  g.write(json.dumps(cred))
+			return True
+		else:
+			return False
+	else:
+		return False
 
 class Root(object):
 	#@cherrypy.expose
@@ -53,6 +66,7 @@ class Root(object):
 		#statements below will only be executed in case of POST
 		if authUser(username,password):
 			cherrypy.session["logged"]=True
+			cherrypy.session["username"]=username
 			raise cherrypy.HTTPRedirect("/",status=303)
 
 		else:
@@ -65,8 +79,20 @@ class Root(object):
 		raise cherrypy.HTTPRedirect("/login",status=303)
 
 	@cherrypy.expose
-	def changepass(self):
-		return Template(filename="templates/changepass.html").render()
+	def changepass(self,currentpassword="",newpassword="",confirmpassword=""):
+		if cherrypy.request.method=="GET":
+			return Template(filename="templates/changepass.html").render()
+
+
+
+		if cherrypy.session["logged"] and "username" in cherrypy.session:
+			if newpassword==confirmpassword:
+				if changePass(cherrypy.session["username"],currentpassword,newpassword):
+					raise cherrypy.HTTPRedirect("/logout",status=303)
+				else:
+					return "Failed"
+		else:
+			raise cherrypy.HTTPRedirect("/logout",status=303)
 
 	@cherrypy.expose
 	def settings(self):
