@@ -169,8 +169,13 @@ for(var i=0,len=tabData["body"].length;i<len;i++)
   tab_body.append("<tr>" +  row_data +"</tr>");
 }
 }
-function AjaxFillTable(){
 
+
+
+function AjaxFillTable(tableHeaders){
+
+
+  
 
   //update url
   window.URL_GETLOG = window.location.origin + "/api?action=getlog&payload=" + JSON.stringify(window.GETLOG_PAYLOAD);
@@ -186,16 +191,45 @@ function AjaxFillTable(){
     //return ;
     
     var tabledata={"header":[],"body":[]};
+
+
+
+    // If tableHeaders passed
+    if (tableHeaders === undefined) {
+        tabledata["header"]=Object.keys(data[0]["rawlog"])
+    }
+    else
+    {
+    	 tabledata["header"]=tableHeaders;
+    }
     
-    tabledata["header"]=Object.keys(data[0]["rawlog"]).map(function(text){return text.toUpperCase()});
+
     tabledata["header"].push("TIME");
+
+
 
     for(var i=0,len=data.length;i<len;i++)
     {
       row = Object.values(data[i]["rawlog"])
+
+      row=[];
+
+      for (var j = 0; j < tabledata["header"].length-1; j++) //length-1 as we leave the TIME header
+      {
+      	row.push(data[i]["rawlog"][tabledata["header"][j]]);
+      }
+
       row.push(data[i]["formattedtime"])
+
+     
       tabledata["body"].push(row);
+
+      
+
+      //console.log(row);
     }
+
+    tabledata["header"]=tabledata["header"].map(function(text){return text.toUpperCase()});
 
     fillTable(tabledata);
 
@@ -258,6 +292,10 @@ $("#time1-submit").click(settime);
 $("#time2-submit").click(settime);
 
 AjaxFillTable();
+
+// example of table with headers
+//table_headers=["logID","device_id"]
+//AjaxFillTable(table_headers);
 
 </script>
 
