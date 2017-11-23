@@ -158,13 +158,13 @@ def render(template_name,**kwargs):
     return templateEnv.get_template("%s.html" % "_404").render()
 
 
-def render_post(post_name):
+def render_post(post_folder,post_name):
   #templateLoader = jinja2.FileSystemLoader('_posts')
   #templateEnv = jinja2.Environment( loader=templateLoader )
   templateEnv = jinja2.Environment()
   try:
 
-    post_files=glob.glob("_posts/%s.*" % post_name)
+    post_files=glob.glob("_posts/%s/%s.*" % (post_folder,post_name))
     if len(post_files)>0:
       post_files.sort()
       post_file=post_files[0]
@@ -174,6 +174,7 @@ def render_post(post_name):
       elif post_file.endswith(".textile"):
         textile_part,yaml_data=frontmatter(post_file)
         html_post=textile.textile(textile_part)
+
         
     _config["local"]=yaml_data
     return render("posts",_config=_config,_POSTContent=html_post)
@@ -192,8 +193,9 @@ class Sampy(object):
     return render("index",_config=_config)
 
   @cherrypy.expose
-  def posts(self,page):
-    return render_post(page)
+  def blog(self,post_name):
+    return render_post("blog",post_name)
+
 
   @cherrypy.expose
   def picturesGallery(self):
@@ -230,7 +232,7 @@ if __name__ == "__main__":
         '/': {
             'tools.sessions.on': True,
             'tools.staticdir.root': os.path.abspath(os.getcwd()),
-            'error_page.404': error_page_404
+            'error_page.404': error_page_404,
         },
         '/static': {
             'tools.staticdir.on': True,
