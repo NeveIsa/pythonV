@@ -11,6 +11,9 @@ import uuid
 import glob
 import textile
 
+
+import io #for utf-8 file read/write
+
 ### GLOBAL VARS ###
 
 __STATIC_DIR = './static'
@@ -43,6 +46,10 @@ yaml.add_constructor(_mapping_tag, dict_constructor)
 
 
 def frontmatter(filename):
+  """
+  Returns other_part,yamlData after parsing from document frontmatter
+
+  """
   yaml_part=""
   f=open(filename)
   line=f.readline()
@@ -66,15 +73,15 @@ def frontmatter(filename):
       #Update the doc with the new yaml containing DOCUUID
 
       #updated_yaml="---\n"+yaml.dump(yamlData,default_flow_style=False)+"---\n" 
-      
+
       yaml_part_lines=yaml_part.split("\n")
       #append DOCUUID
       yaml_part_lines.append("DOCUUID: %s"%DOCUUID) 
-      
+
       updated_yaml="---\n"+ "\n".join(yaml_part_lines) + "\n---\n"
 
       updated_doc= updated_yaml + other_part
-      
+
       with open(filename,'w') as g:
         g.write(updated_doc)
 
@@ -115,7 +122,7 @@ def api_query(query):
     gallery={}
     for album in albums:
       album_path=os.path.join(albums_dir,album)
-      
+
       albuminfo_path=os.path.join(album_path,"info.txt")
       if os.path.exists(albuminfo_path):
         info=open(albuminfo_path).read()
@@ -130,21 +137,77 @@ def api_query(query):
     quote_src="https://quotes.rest/qod"
     quote_file=__STATIC_DIR+"/quotes.json"
     if os.path.exists(quote_file):
-      with open(quote_file) as f:
-        quote=json.loads(f.read())
-
-      #CHECK IF QUOTE IS FROM TODAY -- server return UTC time
-      if quote["contents"]["quotes"][0]["date"]==datetime.datetime.utcnow().strftime("%Y-%m-%d"):
-        return quote
+      with io.open(quote_file) as f:
+        try:
+          quote=json.loads(f.read())
+          #CHECK IF QUOTE IS FROM TODAY -- server return UTC time
+          if quote["contents"]["quotes"][0]["date"]==datetime.datetime.utcnow().strftime("%Y-%m-%d"):
+            return quote
+        except:
+          print("Error parsing quotes.json")
+          pass
 
     quote=requests.get(quote_src,headers={"Accept": "application/json"}).text
-    with open(quote_file,'w') as g:
+
+    with io.open(quote_file,'w') as g:
       g.write(quote)
     return json.loads(quote)
 
+  elif query["data"]=="allposts":
+    return ALL_POSTS_SUMMARY
 
   else:
     return {"status":"fail","reason":"Invalid data parameter in query json"}
+
+
+
+def frontpost(posts_directories):
+  '''
+  Produces summary report of all posts from
+  their front matter
+  '''
+
+  aggregate_summary={}
+
+  for folder in posts_directories:
+    print("frontpost ---> %s" % folder)
+    files=[]
+    folder_summary={}
+
+
+    #Add files ending with .md,.markdown or .textile
+    
+    filetypes=map(lambda x:os.path.join(folder,x),["*.md","*.markdown","*.textile"])
+
+    for filetype in filetypes:
+      files.extend(glob.glob(filetype))
+      #print filetype
+
+    print("Found files in %s..." % folder)
+
+
+    for file in files:
+      print("  %s"%file)
+      rest,yaml=frontmatter(file)
+
+      # Add parent folder name to the file summary 
+      if not yaml:
+        yaml={}
+
+      yaml["parent_folder"]=folder
+
+      justDfilename=os.path.split(file)[-1]
+      folder_summary[justDfilename]=yaml
+      #print(yaml)
+
+    folder_summary_file = os.path.join(folder,"folder_summary.json")
+    #print("Generating {} for {}\n".format(folder_summary_file,folder))
+    
+    aggregate_summary[folder]=folder_summary 
+
+  pprint(aggregate_summary)
+
+  return aggregate_summary
 
 ### HELPERS ###
 
@@ -177,7 +240,7 @@ def render_post(post_folder,post_name):
 
         
     _config["local"]=yaml_data
-    return render("posts",_config=_config,_POSTContent=html_post)
+    return render("post",_config=_config,_POSTContent=html_post)
     #return jinja2.Template(gfm2html(md_part)).render()
     #return templateEnv.get_template().render()
   except Exception as e:
@@ -188,13 +251,20 @@ def render_post(post_folder,post_name):
 
 
 class Sampy(object):
+
   @cherrypy.expose
   def index(self):
     return render("index",_config=_config)
 
   @cherrypy.expose
-  def blog(self,post_name):
-    return render_post("blog",post_name)
+  def posts(self,folder="",post_name=""):
+  	if not folder and not post_name:
+  		return render("allposts",_config=_config)
+  	elif not post_name:
+  		_config["highlightFolder"]=folder
+  		return render("allposts",_config=_config)
+  	else:
+  		return render_post(folder,post_name)
 
 
   @cherrypy.expose
@@ -203,7 +273,8 @@ class Sampy(object):
 
   @cherrypy.expose
   @cherrypy.tools.json_out()
-  def test(self):
+  def test(self,name):
+    return name
     return {"hello":"world","okay":"ko"}
 
   @cherrypy.expose
@@ -211,6 +282,7 @@ class Sampy(object):
   def api(self,query):
     try:
       query=json.loads(query)
+      #print json.dumps(query)
       return api_query(query)
 
     except Exception as e:
@@ -224,6 +296,8 @@ class Sampy(object):
 
 if __name__ == "__main__":
 
+  POSTS_FOLDER="_posts"
+  ALL_POSTS_SUMMARY=frontpost(map(lambda x:os.path.join(POSTS_FOLDER,x),filter(lambda x:os.path.isdir(os.path.join(POSTS_FOLDER,x)),os.listdir(POSTS_FOLDER))))
 
   def error_page_404(status, message, traceback, version):
     return render("_404")
@@ -242,5 +316,9 @@ if __name__ == "__main__":
     }
 
   cherrypy.config.update({'server.socket_host': '0.0.0.0', 'server.socket_port': 80} ) 
+
+  cherrypy.config.update({'log.screen': True,
+                            'log.access_file': 'logs/access.log',
+                            'log.error_file': 'logs/error.log'})
 
   cherrypy.quickstart(Sampy(), '/', conf)

@@ -1,0 +1,172 @@
+{% include '/_head.html' %}
+
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet"> 
+<style type="text/css">
+  .post-body
+  {
+    font-family: 'Roboto Slab', serif;
+    text-align: justify;
+    /*text-justify:auto;*/
+  }
+
+  .post-body h1:first-child 
+  {
+    text-shadow: 1px 2px 0px #ebebeb,
+               0 0 0 black,
+               -1px 1px 0 #ebebeb,
+               5px 5px 0 #333;
+  
+    color: rgba(64, 65, 63, 1.0000);
+  }
+</style>
+
+<link rel="stylesheet" href="/static/assets/highlight/styles/idea.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+    <body>
+      <!--<div class="container">-->
+        <!-- Page Content goes here -->
+
+      <!-- Navbar goes here -->
+      <!--{% include '/_navbar.html' %}-->
+       
+      <!-- Navbar goes here -->
+
+
+
+
+
+      <div class="row bgtexture" style="margin-bottom: 0px">
+
+
+        {% include '/_postSide.html' %}
+       
+        
+        <div id="pagemain" class="col l9 m9 s12 blue-grey darken-4 bgtexture">
+          
+          <ul class="collapsible popout" data-collapsible="expandable">
+            <li>
+            <div class="collapsible-header blue-grey darken-4 white-text"><i class="material-icons">view_list</i><div class="foldertitle">First</div></div>
+            <div class="collapsible-body white-text"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+          </ul>
+
+        </div>
+        
+
+
+      </div>
+
+
+    </body>
+
+
+
+<script type="text/javascript">
+
+  //SCRIPT TO FILL THE PAGE WITH POSTS
+
+  $.get(_API_URL+'?query={"data":"allposts"}',function(data,status){if(status=="success")fillPostsList(data)})
+
+  function fillPostsList(postsList) 
+  {
+
+    postsDiv=$(".collapsible")
+
+    folderListTemplate=postsDiv.children().eq(0).clone()
+
+    postsDiv.html("") //clear
+
+    for (var path in postsList) 
+    {
+      folder=path.split("/")
+      folder.reverse()
+      folder=folder[0]
+
+      newTemplate=folderListTemplate.clone()
+
+      newTemplate.find(".foldertitle").html("<b>"+folder.toUpperCase()+"<b>")
+
+      ul_element=$("<ul></ul>")
+
+      for(post in postsList[path])
+      {
+        postname=post.split(".")[0]
+        ul_element.append($("<li><b><a class='link4' href='/posts/"+folder+"/"+postname+"'>"+postname+"</a></b></li>"))
+        console.log(post)
+      }
+
+      newTemplate.find(".collapsible-body").html("").append(ul_element) //clear and append
+
+      postsDiv.append(newTemplate)
+
+      //console.log("")
+       
+    }
+
+    // HIGHLIGHT FOLDER IF SPECIFIED
+    var highlightFolder="{{_config['highlightFolder']}}".toUpperCase()
+    
+    $(".collapsible-header:contains("+ highlightFolder +")" ).click()
+
+  }
+
+
+
+
+  
+</script>
+
+
+
+{% include '/_footer.html' %}
+
+
+
+
+
+<script type="text/javascript">
+  //Auto adjust height of Sidebar and Main content
+
+  function AdjustHeight()
+  {
+    if (window.isMobile.matches) 
+    {
+          //Conditional script here
+          console.log("---> Mobile Browser - from AdjustHeight");
+        }
+        else
+        {
+          console.log("---> Desktop or Tablet Browser - from AdjustHeight")
+        
+      var pagesideElement=$("#pageside")
+      var pagemainElement=$("#pagemain")
+
+      var pagesideH=pagesideElement.height()
+      var pagemainH=pagemainElement.height()
+
+      var viewPortHeight = $(window).height(); //screen vertical height = vh
+
+      //get max height from the height of the two 
+      var max=pagesideH>pagemainH?pagesideH:pagemainH
+
+      //if max obtained before is less than the screen height, select max as window height
+      max=max>viewPortHeight?max:viewPortHeight
+
+      pagemainElement.height(max)
+      pagesideElement.height(max)
+    }
+  }
+
+
+  $( document ).ready(function()
+    {
+      setTimeout(AdjustHeight,0); //take care after 1s
+      setTimeout(AdjustHeight,50); //take care after 1s
+      setTimeout(AdjustHeight,200); //take care after 3s
+      setTimeout(AdjustHeight,300); //take care after 7s again, if missed after 3 seconds
+    })
+          
+
+</script>
