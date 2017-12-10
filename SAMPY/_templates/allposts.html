@@ -40,7 +40,7 @@
       <div class="row bgtexture" style="margin-bottom: 0px">
 
 
-        {% include '/_postSide.html' %}
+        {% include '/_allpostsSide.html' %}
        
         
         <div id="pagemain" class="col l9 m9 s12 blue-grey darken-4 bgtexture">
@@ -69,6 +69,36 @@
 
   $.get(_API_URL+'?query={"data":"allposts"}',function(data,status){if(status=="success")fillPostsList(data)})
 
+  function comparePostDates(a,b)
+  {
+    //RETURNS 1 if a>b else -1
+
+    //a and b are file names like 12-12-12-abc and 11-11-11-xyz or just plain abc-123 and xyz-123
+    if ( /\d+-\d+-\d+/.test(a) && /\d+-\d+-\d+/.test(b))
+    {
+      //if both have dates present in filename
+      a_date_parts=String(/\d+-\d+-\d+/.exec(a)).split("-") // dd-mm-yyyy -> [dd,mm,yyyy]
+      b_date_parts=String(/\d+-\d+-\d+/.exec(b)).split("-")
+
+      a_date=a_date_parts[2]+a_date_parts[1]+a_date_parts[0] // yyyymmdd
+      b_date=b_date_parts[2]+b_date_parts[1]+b_date_parts[0] // yyyymmdd
+    }
+    else
+    {
+      a_date=a; //if they do not contain dates, then just set to original names
+      b_date=b;
+    }
+
+    //Now do a string sort fr a,b
+    sortedNames=[a_date,b_date].sort() // sorts in ascending order
+
+    //console.log("+++++++"+sortedNames)
+
+    // if a>b return 1, else return -1
+    return sortedNames.indexOf(a_date)==0?-1:1
+
+  }
+
   function fillPostsList(postsList) 
   {
 
@@ -90,10 +120,43 @@
 
       ul_element=$("<ul></ul>")
 
-      for(post in postsList[path])
+      console.log("+++unsorted+++" +JSON.stringify(Object.keys(postsList[path])))
+      console.log("+++rev-sorted+++" +JSON.stringify(Object.keys(postsList[path]).sort(comparePostDates).reverse()))
+
+      postNamesArray=Object.keys(postsList[path]).sort(comparePostDates).reverse()
+
+
+      //for(post in postsList[path])
+      for(post_index in postNamesArray)
       {
+        post=postNamesArray[post_index]
+        
         postname=post.split(".")[0]
-        ul_element.append($("<li><b><a class='link4' href='/posts/"+folder+"/"+postname+"'>"+postname+"</a></b></li>"))
+
+        postname_date=/\d+-\d+-\d+/.test(postname)
+
+        if(postname_date)
+        {
+          postname_date=String(/\d+-\d+-\d+/.exec(postname))
+          postname_date=postname_date.replace(/-/g,"/")
+          
+          postname_date = new Date(postname_date).toDateString()
+
+          postname_date_parts=postname_date.split(" ")
+          postname_date = postname_date_parts[3]+ " " +postname_date_parts[1]+ " " +postname_date_parts[2]
+
+          post_display_name="<span class='green-text'>"+postname_date+" | "+"</span>" 
+                            + "<span class=''>"+postname.replace(/\d+-\d+-\d+-/,"").capitalize()+"</span>"
+
+          //console.log(postname_date)
+
+        }
+        else
+        {
+          post_display_name="<span class=''>"+postname.capitalize()+"</span>"
+        }
+        
+        ul_element.append($("<li><b><a class='link4' href='/posts/"+folder+"/"+postname+"'>"+post_display_name+"</a></b></li>"))
         console.log(post)
       }
 

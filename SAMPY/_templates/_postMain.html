@@ -1,5 +1,5 @@
 
-<div id="pagemain" class="col l12 m12 s12 bgtexture">
+<div id="pagemain" class="col l9 m9 s12 bgtexture">
 
 
 	  <div class="col s2"></div>
@@ -103,7 +103,7 @@ $(".highlight").css("background","inherit")
       	quote_string = quote_string
 
         console.log("\nQUOTE:\n" + JSON.stringify(data)+"\n")
-        var QOD='<div class="white-text lighten-2" style="font-weight: bold;"> <div style="color:indianred">QUOTE OF THE DAY</div> <hr><i>'+ quote_string + '<br><span class="right blue-text">-&nbsp;' + quote_author + '</span></i></div>'
+        var QOD='<div class="white-text lighten-2 l12 m12 s12" style="font-weight: bold;"> <div style="color:indianred">QUOTE OF THE DAY</div> <hr><i>'+ quote_string + '<br><span class="right blue-text">-&nbsp;' + quote_author + '</span></i></div>'
         //QOD="ok"
         setTimeout(function(){Materialize.toast(QOD, 7000,'rounded');},3000)
 

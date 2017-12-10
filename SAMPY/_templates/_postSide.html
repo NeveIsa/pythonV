@@ -1,55 +1,90 @@
 <div id="pageside" class="col l3 m3 s12 blue-grey darken-4 bgtexture" >
 
-	 <!-- IMAGE AND DESCRIPTON -->
 
-	  <!--<div id="shortprofile" class="card blue-grey darken-3">
-	    <div class="card-image waves-effect waves-block waves-light">
-	      <img class="activator responsive-img circle" src="{{_config['profile_picture']}}">
+	<div class="fixedsidebar">
+
+		 <!-- IMAGE AND DESCRIPTON -->
+
+		  <!--<div id="shortprofile" class="card blue-grey darken-3">
+		    <div class="card-image waves-effect waves-block waves-light">
+		      <img class="activator responsive-img circle" src="{{_config['profile_picture']}}">
+		    </div>
+		    <div class="card-content">
+		      <span class="card-title activator orange-text text-darken-4">{{_config["title"]}}<i class="material-icons right">more_vert</i></span>-->
+		      <!--<p><a href="#">This is a link</a></p>-->
+		    <!--</div>
+		    <div class="card-reveal blue-grey darken-3">
+		      <span class="card-title orange-text text-darken-4">About<i class="material-icons right">close</i></span>
+		      <p class="white-text">{{_config["description"]}}</p>
+		      <i><a href="mailto:{{_config['email']}}">{{_config["email"]}}</a></i>
+		    </div>
+		  </div>-->
+
+	    <!-- QUOTE OF THE DAY 
+	    <div id="quoteoftheday" class="row" style="background-color: inherit;">
+	      <div class="col s12">
+	        <div class="card-panel blue-grey darken-3">
+	          <span class="white-text">
+	          	{QUOTE-OF-THE-DAY}
+	          </span>
+	        </div>
+	      </div>
+	    </div>-->
+
+
+	    <!-- SOUNDCLOUD -->
+	    <div id="soundcloud_embed" class="col l12 s12"></div>
+
+	    <!--TABLE OF CONTENTS-->
+	    <div id="TOC" class="col l12 s12">
+	      <ul class="collection with-header table-of-contents">
+	        <li class="collection-header blue-grey darken-4 bgtexture white-text"><h5>Table of Contents</h5></li>
+	        <li class="collection-item blue-grey darken-4 bgtexture"><a class="white-text">  </a></li>
+	      </ul>
 	    </div>
-	    <div class="card-content">
-	      <span class="card-title activator orange-text text-darken-4">{{_config["title"]}}<i class="material-icons right">more_vert</i></span>-->
-	      <!--<p><a href="#">This is a link</a></p>-->
-	    <!--</div>
-	    <div class="card-reveal blue-grey darken-3">
-	      <span class="card-title orange-text text-darken-4">About<i class="material-icons right">close</i></span>
-	      <p class="white-text">{{_config["description"]}}</p>
-	      <i><a href="mailto:{{_config['email']}}">{{_config["email"]}}</a></i>
-	    </div>
-	  </div>-->
-
-    <!-- QUOTE OF THE DAY -->
-    <div id="quoteoftheday" class="row">
-      <div class="col s12">
-        <div class="card-panel blue-grey darken-3">
-          <span class="white-text">
-          	{QUOTE-OF-THE-DAY}
-          </span>
-        </div>
-      </div>
-    </div>
 
 
-    <!-- SOUNDCLOUD -->
-    <div id="soundcloud_embed" class="col l12 s12"></div>
 
+	</div>
 
 
 </div>
 
 
 <script type="text/javascript">
-	/*$sidebar = $("#quoteoftheday");
+
+	//FIXED SIDEBAR SCRIPT
+
+	$sidebar = $(".fixedsidebar");
 	$window = $(window);
 	var sidebarOffset = $sidebar.offset();
 
 	//$sidebar.css("position","fixed")
 
-	 
-	$window.scroll(function () {
+	function scrollSidebar() {
+
+		if (window.isMobile.matches)return;
+
+		TOCdiffViewport=$(".fixedsidebar").children("#TOC").height()-$window.height()
+
+		if(TOCdiffViewport>0) 
+		{
+			TOCdiffViewport+=100; //spare 100 pixels from bottom
+		}
+		else
+		{
+			TOCdiffViewport=0;
+		}
+
+		toc_margin_adjust=(TOCdiffViewport)*($window.scrollTop()/$(document).height()) 
+
+		//console.log(toc_margin_adjust)
+
 	    if ($window.scrollTop() > sidebarOffset.top) 
 	    {
 	        $sidebar.stop().animate({
-	          marginTop: $window.scrollTop() - sidebarOffset.top
+	          marginTop: $window.scrollTop() - sidebarOffset.top - toc_margin_adjust,
+	          duration: 100
 	        });
 
 
@@ -59,14 +94,188 @@
 	    } 
 	    else {
 	        $sidebar.stop().animate({
-	            marginTop: 0
+	            marginTop: 0,
+	            duration: 100
 	        });
 	    }
-	});*/
+	}
+	
+	
+	
+	$window.scroll(scrollSidebar);
+
+
+
+	// Trigger the scroll event when the doc loads for INITIALISATION Purposes
+	$(document).ready(function(){setTimeout(function(){$(window).scroll()},100)});
+
 </script>
 
 
-   
 
+
+<script type="text/javascript">
+
+  //QUOTE OF THE DAY
+
+  $.get('/api?query={"data":"quote"}',
+      function(data)
+      {
+      	quote_string=data["contents"]["quotes"][0]["quote"];
+      	quote_author=data["contents"]["quotes"][0]["author"];
+
+      	quote_string = quote_string
+
+        console.log("\nQUOTE:\n" + JSON.stringify(data)+"\n")
+        var QOD='<div class="white-text lighten-2" style="font-weight: bold;"> <div style="color:indianred">QUOTE OF THE DAY</div> <hr><i>'+ quote_string + '<br><span class="right blue-text">-&nbsp;' + quote_author + '</span></i></div>'
+        //QOD="ok"
+        //setTimeout(function(){Materialize.toast(QOD, 7000,'rounded');},3000)
+
+        $("#quoteoftheday").find("span").html(QOD)
+      }
+    )
+
+  /*setTimeout(function(){
+  $("#quoteoftheday").slideUp("slow");
+  },
+  2700);
+
+  setTimeout(function(){
+  $("#quoteoftheday").slideDown("slow");
+  },
+  11000);*/
+
+</script>
+
+
+<script type="text/javascript">
+	// AUTOGEN TABLE OF CONTENTS
+
+
+	$( document ).ready(gentoc);
+
+
+	function gentoc()
+	{
+		var TOCSlist=[]
+		var TOCSdiv=$("#TOC>.collection");
+
+		var TOCsampleContent=TOCSdiv.children(".collection-item").clone()
+		TOCSdiv.children(".collection-item").remove()
+
+
+		function scrollToContent(lastitem,toc)
+		{
+			lastitem.click(function(){toc.scrollTo()})
+		}
+
+		var toctag="{{_config['local']['TOC_TAG']}}"
+
+		if(toctag=="")toctag="._toc"
+
+		window.tocs=$(toctag);
+		tocs=window.tocs
+
+		for (var i = 0; i < tocs.length; i++) 
+		{
+			var toc=tocs.eq(i);
+			//console.log(toc.html())
+			TOCSlist.push(toc.html())
+
+			thisContent=TOCsampleContent.clone()
+			thisContent.children().eq(0).html(toc.html())
+
+			TOCSdiv.append(thisContent)
+
+			lastitem=TOCSdiv.children().eq(-1)
+
+			scrollToContent(lastitem,toc)
+
+
+		}
+
+		
+
+		//make global
+		window.TOCSlist=TOCSlist;
+		window.TOCSdiv=TOCSdiv;
+
+		// HIGHLIGHT CURRENTLY FOCUSED TOC ELEMENT
+
+		//$(window).scroll(highlightTOC); //check every one second
+
+		setInterval(highlightTOC,700); //check every one second
+
+		if(toctag=="notoc_")
+		{
+			$("#TOC").remove()
+		}
+
+
+
+	}
+
+	///HELPERS///
+
+
+    
+	function highlightTOC()
+	{
+		currentScrollPositionScreenCenterY=$(window).scrollTop()+ window.innerHeight/2; // Y pixels till center of screen
+		//console.log(currentScrollPositionScreenCenterY)
+
+		tocs=window.tocs;
+
+		for (var i = 0; i < tocs.length; i++) 
+		{
+			toc=tocs.eq(i);
+			
+			//check which is the next TOC below our currentScrollPositionScreenCenterY
+			if(toc.offset().top>currentScrollPositionScreenCenterY)
+			{
+				break;
+			}
+			else
+			{
+				lasttoc=toc;
+			}
+			
+		}
+
+		lasttoc_index=i-1;
+		toc_index=i
+
+		//console.log(lasttoc.html())
+
+		//clear all toclistHighlight classes added
+		window.TOCSdiv.children(".collection-item").children().removeClass("active");
+
+		if(lasttoc_index>=0)
+		{
+			window.TOCSdiv.children(".collection-item").eq(lasttoc_index).children().addClass("active")
+			//console.log(">>> highlightTOC --- " + toc.html())
+		}
+
+	}
+
+	//SCROLL TO 
+	$.fn.scrollTo = function (speed) 
+	{
+	    if (typeof(speed) === 'undefined')
+	        speed = 1000;
+
+	    $('html, body').animate({
+	        scrollTop: parseInt($(this).offset().top-20) //leave 20px some from top
+	    }, speed);
+    };
+
+
+    // Another helper
+    function scrollTo(el)
+    {
+    	el.scrollTo();
+    }
+
+</script>
 
 

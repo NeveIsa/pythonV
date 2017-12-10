@@ -144,37 +144,6 @@
 
 
 
-<script type="text/javascript">
-  //QUOTE OF THE DAY
-  
-  $.get(_API_URL+'?query={"data":"quote"}',
-      function(data)
-      {
-      	quote_string=data["contents"]["quotes"][0]["quote"];
-      	quote_author=data["contents"]["quotes"][0]["author"];
-
-      	quote_string = quote_string
-
-        console.log("\nQUOTE:\n" + JSON.stringify(data)+"\n")
-        var QOD='<div class="white-text lighten-2" style="font-weight: bold;"> <div style="color:indianred">QUOTE OF THE DAY</div> <hr><i>'+ quote_string + '<br><span class="right blue-text">-&nbsp;' + quote_author + '</span></i></div>'
-        //QOD="ok"
-        setTimeout(function(){Materialize.toast(QOD, 7000,'rounded');},3000)
-
-        $("#quoteoftheday").find("span").html(QOD)
-      }
-    )
-
-  setTimeout(function(){
-  $("#quoteoftheday").slideUp("slow");
-  },
-  2700);
-
-  setTimeout(function(){
-  $("#quoteoftheday").slideDown("slow");
-  },
-  11000);
-  
-</script>
 
 <script type="text/javascript">
 	//PICTURE ALBUM AJAX FILL VIA API

@@ -21,6 +21,13 @@
 
   <style type="text/css">
 
+  /* CAPITALIZE THE FIRST LETTER */
+  .capitalizeFirstLetter:first-letter 
+  {
+    text-transform:capitalize;
+    display: inline-block;
+  }
+
   /* TEXTURE FOR FOOTER AND SIDEBAR
 
   /*background-color: #263238;*/
@@ -232,5 +239,18 @@
         console.log("---> Desktop or Tablet Browser")
       }
    });
+</script>
+
+
+<script type="text/javascript">
+  //ADD A FUNCTION TO STRING CLASS NAME - Capitalize
+
+  //Convert first occurance of english alphabets to capital
+
+  String.prototype.capitalize = function() 
+  {
+    return this.replace(/[a-zA-z]/,String(this.match(/[a-zA-z]/)).toUpperCase())
+  }
+
 </script>
         

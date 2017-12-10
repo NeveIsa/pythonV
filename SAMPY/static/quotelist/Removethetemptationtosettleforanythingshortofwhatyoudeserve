@@ -1,0 +1,26 @@
+{
+    "success": {
+        "total": 1
+    },
+    "contents": {
+        "quotes": [
+            {
+                "quote": "Remove the temptation to settle for anything short of what you deserve.",
+                "length": "71",
+                "author": "Lorii Myers",
+                "tags": [
+                    "expectation",
+                    "inspire",
+                    "perfection"
+                ],
+                "category": "inspire",
+                "date": "2017-12-08",
+                "permalink": "https://theysaidso.com/quote/ZWrV624xU_q6_KYYlrQpYgeF/lorii-myers-remove-the-temptation-to-settle-for-anything-short-of-what-you-deser",
+                "title": "Inspiring Quote of the day",
+                "background": "https://theysaidso.com/img/bgs/man_on_the_mountain.jpg",
+                "id": "ZWrV624xU_q6_KYYlrQpYgeF"
+            }
+        ],
+        "copyright": "2017-19 theysaidso.com"
+    }
+}
