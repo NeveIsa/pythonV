@@ -6,4 +6,4 @@ pyyaml
 requests
 
 textile
-pygfm
+py-gfm
