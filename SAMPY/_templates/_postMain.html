@@ -10,10 +10,50 @@
 
       </div>
 
+      <div class="col s12 post-body flow-text">
+
+          <div class="col s2"></div>
+          
+          <div class="col s8" id="disqus_thread"></div>
+          
+          <div class="col s2"></div>
+
+      </div>
+
+
+      
+         
+
 	  <div class="col s2"></div>
 
 
 </div>
+
+
+
+ <script>
+
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+          
+          var disqus_config = function () {
+          //this.page.url = window.location.pathname; //PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = "{{_config['local']['DOCUUID']}}"//PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://sampying.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 
 <script>
@@ -44,6 +84,7 @@ $(".highlight").css("background","inherit")
 
 <script type="text/javascript">
 	//Auto adjust height of Sidebar and Main content
+  window.discussElementHeight=-1;
 
 	function AdjustHeight()
 	{
@@ -57,10 +98,28 @@ $(".highlight").css("background","inherit")
 	        console.log("---> Desktop or Tablet Browser - from AdjustHeight")
 	      
 			var pagesideElement=$("#pageside")
-			var pagemainElement=$("#pagemain")
+      var pagemainElement=$("#pagemain")
+			var discussElement=$("#disqus_thread")
+      
+
 
 			var pagesideH=pagesideElement.height()
-			var pagemainH=pagemainElement.height()
+
+      console.log("DisqusHeight-->New:"+discussElement.height()+"---Old:"+window.discussElementHeight)
+
+      if(discussElement.height()>window.discussElementHeight)
+      {
+			  var pagemainH=pagemainElement.height() - window.discussElementHeight + discussElement.height();
+        window.discussElementHeight=discussElement.height();
+        console.log("Accomodated new Discuss height to ---> " + window.discussElementHeight)
+
+      }
+      else
+      {
+        var pagemainH=pagemainElement.height();
+        console.log("Unchanged Discuss height ---> " + window.discussElementHeight)
+
+      }
 
 			var viewPortHeight = $(window).height(); //screen vertical height = vh
 
@@ -78,10 +137,29 @@ $(".highlight").css("background","inherit")
 
 	$( document ).ready(function()
 		{
-			setTimeout(AdjustHeight,0); //take care after 1s
-			setTimeout(AdjustHeight,50); //take care after 1s
-			setTimeout(AdjustHeight,200); //take care after 3s
-			setTimeout(AdjustHeight,300); //take care after 7s again, if missed after 3 seconds
+
+      function polledAdjustHeight()
+      {
+        checkInterval=500; //ms
+        checkTill=20000; //ms
+
+        for (var i = checkInterval; i <checkTill ; i+=checkInterval) 
+        {
+          setTimeout(AdjustHeight,i); //take care after 1s
+          console.log("polledAdjustHeight-->"+i/checkInterval)
+        }
+      }
+
+      polledAdjustHeight();
+
+      $("#disqus_thread").change(polledAdjustHeight)
+      $("#disqus_thread").resize(polledAdjustHeight)
+      $("#disqus_thread").on("DOMSubtreeModified DOMNodeRemoved",function()
+      {
+        polledAdjustHeight()
+        console.log('----> #discuss_thread CHANGED');
+      });
+
 		})
 					
 
