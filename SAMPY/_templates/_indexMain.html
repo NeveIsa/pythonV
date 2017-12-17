@@ -127,11 +127,12 @@
 			//if max obtained before is less than the screen height, select max as window height
 			max=max>viewPortHeight?max:viewPortHeight
 
-	        max=max>window.WINDOW_MAX_HEIGHT?max:window.WINDOW_MAX_HEIGHT;
-
-	        max+=1
-
-	        window.WINDOW_MAX_HEIGHT=max;
+	        
+			if(max>window.WINDOW_MAX_HEIGHT)
+	        {
+	        	max+=10;
+	        	window.WINDOW_MAX_HEIGHT=max;
+			}
 
 
 			pagemainElement.height(max)
