@@ -86,6 +86,8 @@ $(".highlight").css("background","inherit")
 	//Auto adjust height of Sidebar and Main content
   window.discussElementHeight=-1;
 
+  window.WINDOW_MAX_HEIGHT=0;
+
 	function AdjustHeight()
 	{
 		if (window.isMobile.matches) 
@@ -129,6 +131,13 @@ $(".highlight").css("background","inherit")
 			//if max obtained before is less than the screen height, select max as window height
 			max=max>viewPortHeight?max:viewPortHeight
 
+      if(max>window.WINDOW_MAX_HEIGHT)
+      {
+          max+=10;
+          window.WINDOW_MAX_HEIGHT=max;
+      }
+
+
 			pagemainElement.height(max)
 			pagesideElement.height(max)
 		}
@@ -141,7 +150,7 @@ $(".highlight").css("background","inherit")
       function polledAdjustHeight()
       {
         checkInterval=500; //ms
-        checkTill=20000; //ms
+        checkTill=15000; //ms
 
         for (var i = checkInterval; i <checkTill ; i+=checkInterval) 
         {
