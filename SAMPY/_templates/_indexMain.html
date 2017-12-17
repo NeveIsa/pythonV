@@ -100,6 +100,8 @@
 <script type="text/javascript">
 	//Auto adjust height of Sidebar and Main content
 
+	window.WINDOW_MAX_HEIGHT=0;
+
 	function AdjustHeight()
 	{
 		if (window.isMobile.matches) 
@@ -125,8 +127,13 @@
 			//if max obtained before is less than the screen height, select max as window height
 			max=max>viewPortHeight?max:viewPortHeight
 
+	        max=max>window.WINDOW_MAX_HEIGHT?max:window.WINDOW_MAX_HEIGHT;
+
+	        window.WINDOW_MAX_HEIGHT=max;
+
+
 			pagemainElement.height(max)
-			//pagesideElement.height(max)
+			pagesideElement.height(max)
 		}
 	}
 
