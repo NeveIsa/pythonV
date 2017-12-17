@@ -11,6 +11,9 @@ import uuid
 import glob
 import textile
 
+import markdown
+from mdx_gfm import GithubFlavoredMarkdownExtension
+
 
 import io #for utf-8 file read/write
 
@@ -108,8 +111,6 @@ def frontmatter(filename):
     return f.read(),None
 
 def gfm2html(gfmsource):
-  import markdown
-  from mdx_gfm import GithubFlavoredMarkdownExtension
   html = markdown.markdown(gfmsource,extensions=[GithubFlavoredMarkdownExtension()])
   return html
 
