@@ -299,6 +299,7 @@ class Sampy(object):
   def refresh(self):
     global ALL_POSTS_SUMMARY
     ALL_POSTS_SUMMARY=refreshPostSummary()
+    return ALL_POSTS_SUMMARY
 
   def default(self, attr='abc'):
     return "Page not Found!"
