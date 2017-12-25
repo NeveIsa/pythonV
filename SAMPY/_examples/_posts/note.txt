@@ -1,0 +1,1 @@
+Categories are directories and posts go into these directories

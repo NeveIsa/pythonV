@@ -1,0 +1,20 @@
+---
+a: 1
+b:
+  c: 3
+  d: 4
+
+
+DOCUUID: c8c77895-b79b-428e-b2d1-9e95752a2b2b
+---
+
+
+
+h1. Textile
+
+* is a _shorthand syntax_ used to generate valid HTML,
+* is *easy* to read and *easy* to write,
+* can generate complex pages,
+* including headers, quotes, lists, tables, and figures.
+
+p{font-size:0.8em}. *TxStyle* is a documentation project of Textile for "Textpattern CMS":http://textpattern.com.
