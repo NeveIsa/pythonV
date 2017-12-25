@@ -171,7 +171,9 @@
 
 		var toctag="{{_config['local']['TOC_TAG']}}"
 
-		if(toctag=="")toctag="._toc"
+
+		// DEFAULT TOC VALUE
+		if(toctag=="")toctag="notoc_";//"._toc"
 
 		window.tocs=$(toctag);
 		tocs=window.tocs
