@@ -73,8 +73,8 @@
   {
     //RETURNS 1 if a>b else -1
 
-    a=a.split("").reverse().join(""); //YYYY-MM-DD -> DD-MM-YYYY
-    b=b.split("").reverse().join(""); //YYYY-MM-DD -> DD-MM-YYYY
+    a=a.split("-").reverse().join("-"); //YYYY-MM-DD -> DD-MM-YYYY
+    b=b.split("-").reverse().join("-"); //YYYY-MM-DD -> DD-MM-YYYY
 
     //a and b are file names like 12-12-12-abc and 11-11-11-xyz or just plain abc-123 and xyz-123
     if ( /\d+-\d+-\d+/.test(a) && /\d+-\d+-\d+/.test(b))
@@ -142,8 +142,8 @@
         if(postname_date)
         {
           postname_date=String(/\d+-\d+-\d+/.exec(postname)) //YYYY-MM-DD
-          
-          postname_date=postname_date.split("").reverse().join("") //DD-MM-YYYY
+
+          postname_date=postname_date.split("-").reverse().join("-") //DD-MM-YYYY
 
           postname_date=postname_date.replace(/-/g,"/")
           
