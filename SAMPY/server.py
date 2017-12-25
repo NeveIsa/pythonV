@@ -295,11 +295,11 @@ class Sampy(object):
       #print e
       return {"status":"fail","exception":str(e)}
 
-
+  @cherrypy.expose
   def refresh(self):
     global ALL_POSTS_SUMMARY
     ALL_POSTS_SUMMARY=refreshPostSummary()
-    
+
   def default(self, attr='abc'):
     return "Page not Found!"
     default.exposed = True
