@@ -210,6 +210,11 @@ def frontpost(posts_directories):
 
   return aggregate_summary
 
+
+
+def refreshPostSummary():
+  return frontpost(map(lambda x:os.path.join(POSTS_FOLDER,x),filter(lambda x:os.path.isdir(os.path.join(POSTS_FOLDER,x)),os.listdir(POSTS_FOLDER))))
+
 ### HELPERS ###
 
 def render(template_name,**kwargs):
@@ -291,6 +296,10 @@ class Sampy(object):
       return {"status":"fail","exception":str(e)}
 
 
+  def refresh(self):
+    global ALL_POSTS_SUMMARY
+    ALL_POSTS_SUMMARY=refreshPostSummary()
+    
   def default(self, attr='abc'):
     return "Page not Found!"
     default.exposed = True
@@ -298,7 +307,7 @@ class Sampy(object):
 if __name__ == "__main__":
 
   POSTS_FOLDER="_posts"
-  ALL_POSTS_SUMMARY=frontpost(map(lambda x:os.path.join(POSTS_FOLDER,x),filter(lambda x:os.path.isdir(os.path.join(POSTS_FOLDER,x)),os.listdir(POSTS_FOLDER))))
+  ALL_POSTS_SUMMARY=refreshPostSummary()
 
   def error_page_404(status, message, traceback, version):
     return render("_404")
