@@ -143,9 +143,9 @@
         {
           postname_date=String(/\d+-\d+-\d+/.exec(postname)) //YYYY-MM-DD
 
-          postname_date=postname_date.split("-").reverse().join("-") //DD-MM-YYYY
+          //postname_date=postname_date.split("-").reverse().join("-") //DD-MM-YYYY
 
-          postname_date=postname_date.replace(/-/g,"/")
+          //postname_date=postname_date.replace(/-/g,"/")
           
           postname_date = new Date(postname_date).toDateString()
 
