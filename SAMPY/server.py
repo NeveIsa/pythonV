@@ -142,7 +142,7 @@ def api_query(query):
         try:
           quote=json.loads(f.read())
           #CHECK IF QUOTE IS FROM TODAY -- server return UTC time
-          if quote["contents"]["quotes"][0]["date"]==datetime.datetime.utcnow().strftime("%Y-%m-%d"):
+          if datetime.datetime.fromtimestamp(os.path.getmtime(quote_file)).strftime("%Y-%m-%d")==datetime.datetime.utcnow().strftime("%Y-%m-%d"):
             return quote
         except:
           print("Error parsing quotes.json")
