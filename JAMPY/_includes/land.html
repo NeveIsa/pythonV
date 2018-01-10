@@ -1,4 +1,6 @@
 {% include basepath.html %}
+
+
 <!--
 	<link href='{{basepath}}/{{basepath}}/sampyassets/landing/assets/style.css' rel='stylesheet'>
 -->
@@ -26,13 +28,44 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<span class="icon fa-diamond"></span>
+
+							<span id="topicon" v-bind:style="{ color: activeColor }" v-bind:class="{ 'fa-spin': isPlaying }" class="icon fa fa-circle-o-notch"></span>
+						    
+						    
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>sampy</h1>
-								<p>I am Sampad and this is where I try to share my activities, discoveries, tutorials and interests. An electrical engineer by education, my interests vary widely, mostly in science and technology, DIY, music, magic, psychology and beyond.<br />
-								:)
+								
+								
+							
+							
+						    
+							<div style="width: 44%;float: left; visibility: hidden;"><h1>sampy</h1></div>
+							
+							<div style="width: 12%;float: left;" class="animation-target">
+								<h1>
+
+									<hr id="loadbar" style="background-color:orange;height:1px; border:none;margin:0;" align="left" width="0%"/>
+
+									sampy
+							    
+							    	<hr id="playbar" style="background-color:lime;height:3px; border:none;margin:0;" align="left" width="0%" />
+						    	</h1>
+
+							</div>							
+							
+							<div style="width: 44%;float:left; visibility: hidden;"><h1>sampy</h1></div>	
+							
+							<div style="clear:both;"></div>	
+
+
+								<p>
+									I am Sampad and this is where I try to share my activities, discoveries, tutorials and interests. An electrical engineer by education, my interests vary widely, mostly in science and technology, DIY, music, magic, psychology and beyond.<br />
+									:)
+								</p>
+						
+
+								<div id="scplayer"></div>
 								<!--<a href="https://html5up.net/license">Creative Commons</a> license.</p>-->
 							</div>
 						</div>
@@ -40,9 +73,10 @@
 							<ul>
 								<li><a href="#intro">Intro</a></li>
 								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<!--<li><a href="#about">About</a></li>-->
+								<!--<li><a href="#contact">Contact</a></li>-->
 								<li><a href="#elements">Elements</a></li>
+								<li><a href="#blog">Blog</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -54,9 +88,21 @@
 						<!-- Intro -->
 							<article id="intro">
 								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="{{basepath}}/sampyassets/landing/images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+								<!--<span class="image main"><img src="{{basepath}}/sampyassets/landing/images/conv.jpg" alt="" /></span>-->
+								<blockquote>
+									By three methods we may learn wisdom: First, by reflection, which is noblest; Second, by imitation, which is easiest; and third by experience, which is the bitterest. &nbsp; <b> Confucius</b>
+								</blockquote>
+								<p>
+									Hello visitor, my name is Sampad Bhusan Mohanty. An engineer by education I graduated with a Dual Degree in Electrical from <a href="http://nitrkl.ac.in" target="_blank">NIT Rourkela </a>, India in 2016. Currently I am working as a project associate on an Indutrial IoT project under Prof. <a href="http://www.ece.iisc.ernet.in/~rajeshs/" target="_blank"> Rajesh Sundaresan </a> and Prof. <a href="http://www.linkedin.com/in/bharadwaj-amrutur-16b5241/" target="_blank"> Bharadwaj Amrutur </a> at the Robert Bosch Center for Cyber Physical Systems, Indian Institute of Science(<a href="http://iisc.ac.in" target="_blank">IISc</a>), Bangalore, India. Prior to this I was working with Prof. <a href="http://ece.iisc.ernet.in/~vijay/" target="_blank">P. Vijay Kumar</a> on a low power device to detect and classify human and animals using multiple PIR sensors @ ECE IISc. Here are some of my other 
+									<a href="#work">awesome work</a>.
+								</p>
+								<p>You can contact me @ <a href="mailto:smpdmohanty@gmail.com">smpdmohanty@gmail.com</a></p>
+								<ul class="icons">
+									<li><a href="http://twitter.com/nevesense" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="http://facebook.com/sampad.mohanty.7" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<!--<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>-->
+									<li><a href="http://github.com/neveisa" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
 							</article>
 
 						<!-- Work -->
@@ -95,12 +141,15 @@
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
+							
+							</article>
+
+
+							<!-- Blog -->
+							<article id="blog">
+								<h2 class="major">Blog</h2>
+								{% include sampyBlog.html %}
+							
 							</article>
 
 						<!-- Elements -->
@@ -349,7 +398,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; | <a href="https://html5up.net">sampy</a> | 2018</p>
+						<p class="copyright">&copy; | <a href="">sampy</a> | 2018</p>
 					</footer>
 
 			</div>
@@ -365,3 +414,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
+
+{% include sampyInc.html %}
