@@ -1,0 +1,10 @@
+{% for category in site.categories %}
+  <h3>{{ category[0] }}</h3>
+  <ul>
+  	{% assign posts = category[1] | sort 'date' | reverse %}
+    {% for post in posts %}
+      <li><a class="link-effect" href="{{ post.url }}" target="_blank"> <span class="link-effect-1">{{ post.date |  date: "%Y-%m-%d" }} </span> <span class="link-effect-2">{{ post.title }}</span></a></li>
+      
+    {% endfor %}
+  </ul>
+{% endfor %}

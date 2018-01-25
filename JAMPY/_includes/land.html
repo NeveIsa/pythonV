@@ -45,11 +45,11 @@
 							<div style="width: 12%;float: left;" class="animation-target">
 								<h1>
 
-									<hr id="loadbar" style="background-color:orange;height:1px; border:none;margin:0;" align="left" width="0%"/>
+									<hr id="loadbar" style="background-color:orange;height:1px; border:none;margin:0;opacity: 0.9" align="left" width="0%"/>
 
 									sampy
 							    
-							    	<hr id="playbar" style="background-color:lime;height:3px; border:none;margin:0;" align="left" width="0%" />
+							    	<hr id="playbar" style="background-color:lime;height:3px; border:none;margin:0;opacity: 0.9" align="left" width="0%" />
 						    	</h1>
 
 							</div>							
@@ -60,7 +60,8 @@
 
 
 								<p>
-									I am Sampad and this is where I try to share my activities, discoveries, tutorials and interests. An electrical engineer by education, my interests vary widely, mostly in science and technology, DIY, music, magic, psychology and beyond.<br />
+									{{ site.description }}
+									<br />
 									:)
 								</p>
 						
@@ -72,10 +73,10 @@
 						<nav>
 							<ul>
 								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
+								<!--<li><a href="#work">Work</a></li>-->
 								<!--<li><a href="#about">About</a></li>-->
 								<!--<li><a href="#contact">Contact</a></li>-->
-								<li><a href="#elements">Elements</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
 								<li><a href="#blog">Blog</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
@@ -93,7 +94,7 @@
 									By three methods we may learn wisdom: First, by reflection, which is noblest; Second, by imitation, which is easiest; and third by experience, which is the bitterest. &nbsp; <b> Confucius</b>
 								</blockquote>
 								<p>
-									Hello visitor, my name is Sampad Bhusan Mohanty. An engineer by education I graduated with a Dual Degree in Electrical from <a href="http://nitrkl.ac.in" target="_blank">NIT Rourkela </a>, India in 2016. Currently I am working as a project associate on an Indutrial IoT project under Prof. <a href="http://www.ece.iisc.ernet.in/~rajeshs/" target="_blank"> Rajesh Sundaresan </a> and Prof. <a href="http://www.linkedin.com/in/bharadwaj-amrutur-16b5241/" target="_blank"> Bharadwaj Amrutur </a> at the Robert Bosch Center for Cyber Physical Systems, Indian Institute of Science(<a href="http://iisc.ac.in" target="_blank">IISc</a>), Bangalore, India. Prior to this I was working with Prof. <a href="http://ece.iisc.ernet.in/~vijay/" target="_blank">P. Vijay Kumar</a> on a low power device to detect and classify human and animals using multiple PIR sensors @ ECE IISc. Here are some of my other 
+									Hello visitor, my name is Sampad Bhusan Mohanty. An engineer by education I graduated with a Dual Degree in Electrical from <a href="http://nitrkl.ac.in" target="_blank">NIT Rourkela </a>, India in 2016. Currently I am working as a project associate on an Indutrial IoT project under Prof. <a href="http://www.ece.iisc.ernet.in/~rajeshs/" target="_blank"> Rajesh Sundaresan </a> and Prof. <a href="http://www.linkedin.com/in/bharadwaj-amrutur-16b5241/" target="_blank"> Bharadwaj Amrutur </a> at the Robert Bosch Center for Cyber Physical Systems, Indian Institute of Science(<a href="http://iisc.ac.in" target="_blank">IISc</a>), Bangalore, India. Prior to this I was working with Prof. <a href="http://ece.iisc.ernet.in/~vijay/" target="_blank">P. Vijay Kumar</a> on a low power device to detect and classify human and animals using multi-array PIR sensors @ ECE IISc. Here are some of my other 
 									<a href="#work">awesome work</a>.
 								</p>
 								<p>You can contact me @ <a href="mailto:smpdmohanty@gmail.com">smpdmohanty@gmail.com</a></p>
@@ -416,4 +417,4 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 </html>
 
 
-{% include sampyInc.html %}
+{% include sampyLandInc.html %}
