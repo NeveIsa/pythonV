@@ -4,16 +4,26 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 <script type="text/javascript">
+
+
+window.tocs=[]
+
+$(".blogcontent > .inner > h3").each(function(index){
+	window.tocs.push({"contentTitle":$(this).html(),"idlink":"toc"+index});
+	$(this).attr("id","toc"+index) //add id to the TOC heading
+})
+
 var tocApp = new Vue({
   el: '#sidebar',
   data: {
-    todos: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue' },
-      { text: 'Build something awesome' }
+    tocs: [
+      { contentTitle: 'Learn JavaScript', idlink:"#" },
+      { contentTitle: 'Learn Vue', idlink:"#" },
+      { contentTitle: 'Build something awesome', idlink:"#" }
     ]
   }
 })
 
+tocApp.tocs=window.tocs;
 
 </script>

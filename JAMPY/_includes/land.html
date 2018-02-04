@@ -30,6 +30,7 @@
 						<div class="logo">
 
 							<span id="topicon" v-bind:style="{ color: activeColor }" v-bind:class="{ 'fa-spin': isPlaying }" class="icon fa fa-circle-o-notch"></span>
+
 						    
 						    
 						</div>
@@ -37,7 +38,11 @@
 							<div class="inner">
 								
 								
-							
+							<div id="songtitle" style="display: none;color:gray">
+							{% raw %}
+							&#9658; &nbsp; {{ title }} <!--&nbsp; &#9668;-->
+							{% endraw %}
+							</div>
 							
 						    
 							<div style="width: 44%;float: left; visibility: hidden;"><h1>sampy</h1></div>
@@ -47,7 +52,7 @@
 
 									<hr id="loadbar" style="background-color:orange;height:1px; border:none;margin:0;opacity: 0.9" align="left" width="0%"/>
 
-									sampy
+									sa<span id="INFwheel" style="color:white;">m</span>py
 							    
 							    	<hr id="playbar" style="background-color:lime;height:3px; border:none;margin:0;opacity: 0.9" align="left" width="0%" />
 						    	</h1>
@@ -61,6 +66,7 @@
 
 								<p>
 									{{ site.description }}
+
 									<br />
 									:)
 								</p>
@@ -76,7 +82,7 @@
 								<!--<li><a href="#work">Work</a></li>-->
 								<!--<li><a href="#about">About</a></li>-->
 								<!--<li><a href="#contact">Contact</a></li>-->
-								<!--<li><a href="#elements">Elements</a></li>-->
+								<li><a href="#elements">Elements</a></li>
 								<li><a href="#blog">Blog</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
@@ -97,7 +103,7 @@
 									Hello visitor, my name is Sampad Bhusan Mohanty. An engineer by education I graduated with a Dual Degree in Electrical from <a href="http://nitrkl.ac.in" target="_blank">NIT Rourkela </a>, India in 2016. Currently I am working as a project associate on an Indutrial IoT project under Prof. <a href="http://www.ece.iisc.ernet.in/~rajeshs/" target="_blank"> Rajesh Sundaresan </a> and Prof. <a href="http://www.linkedin.com/in/bharadwaj-amrutur-16b5241/" target="_blank"> Bharadwaj Amrutur </a> at the Robert Bosch Center for Cyber Physical Systems, Indian Institute of Science(<a href="http://iisc.ac.in" target="_blank">IISc</a>), Bangalore, India. Prior to this I was working with Prof. <a href="http://ece.iisc.ernet.in/~vijay/" target="_blank">P. Vijay Kumar</a> on a low power device to detect and classify human and animals using multi-array PIR sensors @ ECE IISc. Here are some of my other 
 									<a href="#work">awesome work</a>.
 								</p>
-								<p>You can contact me @ <a href="mailto:smpdmohanty@gmail.com">smpdmohanty@gmail.com</a></p>
+								<p>Say Hi @ <a href="mailto:smpdmohanty@gmail.com">smpdmohanty@gmail.com</a></p>
 								<ul class="icons">
 									<li><a href="http://twitter.com/nevesense" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="http://facebook.com/sampad.mohanty.7" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>

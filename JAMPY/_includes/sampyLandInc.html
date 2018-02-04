@@ -217,12 +217,12 @@
 var soundcloud_playlist_url="https://soundcloud.com/enhanced/cuebrick-little-chance"
 //var soundcloud_playlist_url="https://soundcloud.com/calvinkong-1/sets/assasins-creed-iii-original"
 var soundcloud_playlist_url="https://soundcloud.com/fjcomposer/sets/unreal-tournament"
-var soundcloud_playlist_url="https://soundcloud.com/vadimnazarov/sets/super-c-gamerip"
+//var soundcloud_playlist_url="https://soundcloud.com/vadimnazarov/sets/super-c-gamerip"
 
 
 function shuffleSCplaylist()
 {
-var iframe = '<iframe id="scframe" style="display:none" width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url='+soundcloud_playlist_url+'&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true&amp;start_track='+Math.floor(Math.random()*10) +'"></iframe>'
+var iframe = '<iframe id="scframe" style="display:none" width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url='+soundcloud_playlist_url+'&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true&amp;start_track='+Math.floor(15*Math.random()) +'"></iframe>'
 return iframe;
 }
 
@@ -241,6 +241,13 @@ function PushSCPlayer(){
 
 	window.SCAPI=SC.Widget("scframe");
 
+  window.SCloadbar=$("#loadbar")
+  window.SCplaybar=$("#playbar")
+  window.SCsongtitle=$("#songtitle")
+  window.SCinfwheel=$("#INFwheel")
+
+
+
 	window.SCAPI.bind(SC.Widget.Events.PLAY,function(audioevent){
 			//$("#topicon").removeClass()
 			//$("#topicon").addClass("icon fa-pause");
@@ -250,6 +257,10 @@ function PushSCPlayer(){
 
       vueSC.isPlaying=true;
 
+      window.SCAPI.getCurrentSound((trackdata)=>{setTimeout(()=>{vueSCtrack.title=trackdata.title},10)});
+
+      setTimeout(function(){window.SCsongtitle.slideDown()},21);
+      setTimeout(function(){window.SCsongtitle.slideUp()},7000);
 
 
 	})
@@ -258,7 +269,7 @@ function PushSCPlayer(){
   
       
       vueSC.isPlaying=false;
-
+      //setTimeout(function(){window.SCsongtitle.slideUp()},10);
 
 
   })
@@ -272,9 +283,6 @@ function PushSCPlayer(){
 
   })
 
-  window.SCloadbar=$("#loadbar")
-  window.SCplaybar=$("#playbar")
-
   window.SCAPI.bind(SC.Widget.Events.PLAY_PROGRESS,function(audioevent){
 
       //console.log(JSON.stringify(audioevent));
@@ -286,6 +294,13 @@ function PushSCPlayer(){
 
       window.SCloadbar.width((audioevent["loadedProgress"]*100).toString()+"%")
       window.SCplaybar.width((audioevent["relativePosition"]*100).toString()+"%")
+
+      r=255*Math.abs(Math.cos(audioevent["relativePosition"]*7*3.14));
+      g=255*Math.abs(Math.cos(audioevent["relativePosition"]*7*3.14));
+      b=255;
+      color="rgb(" + r + "," + g + "," + b + ")";
+      //console.log(color);
+      window.SCinfwheel.css("color",color );
       
 
 
@@ -306,6 +321,7 @@ function PushSCPlayer(){
 
 
 
+
 <script type="text/javascript">
 //VUE
 
@@ -319,6 +335,16 @@ var vueSC = new Vue({
   },
   computed: {
     activeColor: function(){return this.isPlaying?"lime":"orange"}
+  }
+}) 
+
+
+var vueSCtrack = new Vue({
+  el: '#songtitle',
+  data: {
+
+    title: ""
+   
   }
 }) 
 

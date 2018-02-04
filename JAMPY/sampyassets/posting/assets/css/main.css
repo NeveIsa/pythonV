@@ -1639,7 +1639,7 @@
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.55);
+		color: rgba(255, 255, 255, 0.75);
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -3516,7 +3516,7 @@
 		}
 
 	#footer > .inner a {
-		border-bottom-color: rgba(255, 255, 255, 0.15);
+		border-bottom-color: rgba(255, 255, 255, 0.75);
 	}
 
 		#footer > .inner a:hover {
@@ -3525,7 +3525,7 @@
 
 	#footer > .inner .menu {
 		font-size: 0.8em;
-		color: rgba(255, 255, 255, 0.15);
+		color: rgba(255, 255, 255, 0.75);
 	}
 
 	#header + #wrapper + #footer > .inner {

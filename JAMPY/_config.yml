@@ -29,7 +29,7 @@ github_username:  jekyll
 disqus:
     # Leave shortname blank to disable comments site-wide.
     # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
-    shortname: sampadmohanty
+    shortname: sampying
 
 # Build settings
 markdown: kramdown
@@ -37,7 +37,8 @@ theme: minima
 plugins:
   - jekyll-feed
 
-permalink: /:categories/:year-:month-:day-:title
+#permalink: /:categories/:year-:month-:day-:title
+permalink: /:categories/:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

@@ -1,0 +1,157 @@
+<style type="text/css">
+
+        /* LINK HOVER STYLES 
+
+        SOURCE : https://codepen.io/jwv/pen/adONxo?q=hover+link&limit=all&type=type-pens
+
+        */
+
+
+       a{
+          /*color: #6E5C34;*/
+          /*text-decoration: none;*/
+          /*display:block;*/
+          /*margin: 20px auto;*/
+          position: relative;
+          overflow: hidden;
+          /*padding:0 6px;*/
+          /*text-transform: uppercase;*/
+          transition: color .3s cubic-bezier(0.11, 0.7, 0, 1);
+          
+          /*font-size: 0.875rem;
+          letter-spacing: .15rem;
+          line-height: 1.8;*/
+        } 
+
+        a:hover{
+          /*color:#CF2034;*/
+        }
+
+                
+        .link1:after {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #CF2034;
+          content: "";
+          border-bottom: 1px solid #222;
+          transform: translate3d(-101%,0,0);
+          transition: transform .2s cubic-bezier(0.11, 0.7, 0, 1);
+        }
+
+        .link1:hover:after {
+          transform: translate3d(0,0,0);
+          
+        }
+
+        .link2:after {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #CF2034;
+          content: "";
+          border-bottom: 1px solid #222;
+          transform: scale(0);
+
+        }
+
+        .link2:hover:after {
+            transition: transform .3s cubic-bezier(0.11, 0.7, 0, 1);
+          transform: scale(1);
+        }
+
+        .link3:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #CF2034;
+          content: "";
+          border-bottom: 1px solid #222;
+          transform: translate3d(-101%,0,0);
+          transition: transform .3s cubic-bezier(0.11, 0.7, 0, 1);
+        }
+
+        .link3:hover:after {
+          transform: translate3d(0,0,0);
+        }
+
+        .link4:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #CF2034;
+          content: "";
+          transform: scale(0);
+          transition: transform .3s cubic-bezier(0.11, 0.7, 0, 1);
+        }
+
+        .link4:hover:after {
+          transform: scale(1);
+        }
+
+        .link5{
+          position: relative;
+          z-index:1;
+          padding:2px 6px;
+        }
+
+        .link5:after {
+          position: absolute;
+          top:0; bottom: 0;
+          right: 0;left: 0;
+          display: block;
+          background-color: #CF2034;
+          content: "";
+          transform: translate3d(0,100%,0);
+          z-index:-1;
+        }
+
+        .link5:hover:after {
+          transform: translate3d(0,0,0);
+          transition: transform .3s cubic-bezier(0.11, 0.7, 0, 1);
+        }
+
+        .link5:hover{
+          color: #fff;
+        }
+
+
+        .link6{
+          position: relative;
+          z-index:1;
+          padding:2px 6px;
+        }
+
+        .link6:after {
+          position: absolute;
+          top:0; bottom: 0;
+          right: 0;left: 0;
+          display: block;
+          background-color: #170202;
+          content: "";
+          transform: translate3d(-101%,0,0);
+          z-index:-1;
+          transition: transform .3s cubic-bezier(0.11, 0.7, 0, 1);
+        }
+
+        .link6:hover {
+          color: #fff;
+        }
+
+        .link6:hover:after {
+          transform: translate3d(0,0,0);
+        }
+
+  </style>

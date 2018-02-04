@@ -1,0 +1,350 @@
+{% include basepath.html %}
+
+
+<style type="text/css">
+	/* LOADER STYLE */
+
+
+#loaderDiv
+{
+  position:fixed;
+  top: 5%;
+  left: 30%;
+  
+}
+
+.loader-stopwatch {
+
+  font-size: 7em;
+  display: inline-block;
+  position: relative;
+  top: 30%;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  border: 0.35em dotted rgba(14, 95, 118, 0.5);
+  -webkit-transform-origin: center -300%;
+          transform-origin: center -300%;
+}
+
+/*.loader-stopwatch {
+  -webkit-animation: rotateClock 5s infinite ease-in-out;
+          animation: rotateClock 5s infinite ease-in-out;
+  -webkit-filter: drop-shadow(0.2em 0.2em 0.2em rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0.2em 0.2em 0.2em rgba(0, 0, 0, 0.5));
+}*/
+
+.loader-stopwatch:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 2.14em;
+  z-index: 1;
+  display: block;
+  height: 2em;
+  width: 0;
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-box-shadow: 0 0 0 0.11em #0E5F76;
+          box-shadow: 0 0 0 0.11em #0E5F76;
+  -webkit-animation: rotatePointer 3s infinite linear;
+          animation: rotatePointer 3s infinite linear;
+}
+.loader-stopwatch:after {
+  content: '\2022';
+  position: absolute;
+  left: .7em;
+  top: .7em;
+  width: 3em;
+  height: 3em;
+  line-height: 0;
+  color: transparent;
+  text-indent: 3em;
+  text-shadow: -3px -5px 3px #19A6CF;
+  border-radius: 50% 0 50% 50%;
+  border: 3px solid #0E5F76;
+  background-color: #081E3F;
+  background-color: #083D56;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation: rotatePointer 10s infinite linear;
+          animation: rotatePointer 10s infinite linear;
+}
+
+@-webkit-keyframes rotatePointer {
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes rotatePointer {
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes rotateClock {
+  0%, 100% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+@keyframes rotateClock {
+  0%, 100% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+
+</style>
+
+
+
+<!DOCTYPE HTML>
+<!--
+	Lens by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{ page.albumName }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{site.url}}/sampyassets/lens/assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="{{site.url}}/sampyassets/lens/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading-0 is-loading-1 is-loading-2">
+
+		<!-- Main -->
+			<div id="main" style="background-color: #170202">
+
+				<!-- Header -->
+					<header id="header">
+				
+						<h1 style="color:brown">{{ page.albumName }}</h1>
+						<p>{{ page.albumDescription }}</p>
+						
+						<hr>
+
+					
+
+						<!--<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>-->
+					</header>
+
+				<!-- Thumbnail -->
+					<section id="thumbnails">
+						<article>
+							<a class="thumbnail" href="{{site.url}}/sampyassets/lens/images/fulls/01.jpg" data-position="left center"><img src="{{site.url}}/sampyassets/lens/images/fulls/01.jpg" alt="" /></a>
+							<h2>Diam tempus accumsan</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</article>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; 2018 | Sampad Mohanty.</li>
+							<li><a href="/">Home</a>.</li>
+							<li><a href="/#blog">Gallery</a>.</li>
+						</ul>
+					</footer>
+
+			</div>
+
+			<div id="albumContent" style="display: none">
+
+				{{ content }}
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{site.url}}/sampyassets/lens/assets/js/jquery.min.js"></script>
+			<script src="{{site.url}}/sampyassets/lens/assets/js/skel.min.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+
+
+	
+			<!-- PARSING IMG TAGS and placing into ARCTICLE tags -->
+			<script type="text/javascript">				
+
+
+				{% if page.albumFolderScan %}
+					// RETRIEVE FROM THE ALBUMs FOLDER
+					//alert("{{page.albumFolderScan}}")
+
+
+					/*IMPORTANT NOTE
+					
+					The main.js at the bottom needs to be loaded and run within 50ms of the page load and 
+					main.js is responsible for display of the slideshow and doesn't work if loaded after 50ms
+					
+					Using AJAX to fetch the images form the album directory and fill the content in the page
+					cannot be accomplished within this time.
+
+					So there is a need to load the entire page or halt all the JS till the AJAX is finished.
+
+					Instead a jugaad has been arranged, the first time the page loads, the AJAX fires, parses the
+					images found in the directory and then stores as a sessionStorage object, and reloads the page
+
+					The next reload, the session storage is checked for existing data, and if data is present,
+					the no AJAX is sent and the images are added to the content immediately in no time and the main.js does its job within the critical time it needs.
+
+
+					*/
+					
+					if(sessionStorage.getItem("{{page.albumFolder}}"))
+					{
+						$("#albumContent > p").append(sessionStorage.getItem("{{page.albumFolder}}"))
+						populateImages()
+					}
+					else
+					{
+						//INSERT LOADER ANIMATION
+						$("body").html("")
+						$("body").html(
+							'<div id="loaderDiv">\
+							 <div class="loader-stopwatch"></div>\
+							 </div>'
+						  )
+						
+					
+
+						//GET info for album first
+						$.get("{{site.url}}/{{page.albumFolder}}/info.txt",(data)=>{
+										window.albumInfo=data.split("\n");
+										//console.log(window.albumInfo)
+									})
+						.done(()=>
+						{
+							$.get("{{site.url}}/{{page.albumFolder}}/",(data)=>
+									{
+										//console.log(data)
+										data=$(data);
+
+
+										//note JQuery cannot parse head and body tags and moves everything in body one level up while parsing via $(data)
+										//alert(data.find("a").length)
+										links=data.find("a")
+
+										
+										imagesCount=0;
+										imagesNode=""
+										for (var i = 0; i < links.length; i++) {
+											href=links.eq(i).attr("href")
+											//console.log(href+"---"+href.indexOf(".jpg")+"---"+(href.length-4))
+											if(href.indexOf(".jpg")==href.length-4)
+											{
+												//console.log(href)
+												//$("#albumContent > p").append('<img src="{{site.url}}/{{page.albumFolder}}/'+ href + '" title="' + window.albumInfo[imagesCount++] + '" alt=""></img>')
+
+												//$("#albumContent > p").append("")
+
+												imagesNode+='<img src="{{site.url}}/{{page.albumFolder}}/'+ href + '" title="' + window.albumInfo[imagesCount++] + '" alt=""></img>'
+
+											}
+										}
+									}).done(()=>{sessionStorage.setItem("{{page.albumFolder}}",imagesNode); location.reload();})
+						})
+					}
+
+				{% else %}
+
+					populateImages()
+
+				{% endif %}
+
+				
+
+				function populateImages()
+				{
+					images=$("#albumContent img")
+					article=$("#thumbnails > article")
+					$("#thumbnails > article").remove()
+					for (var i = 0; i < images.length; i++) 
+					{
+						insertThumbs(images[i])
+					}
+				}
+
+
+
+
+				function insertThumbs(imageElement)
+				{
+					
+					imageElement=$(imageElement)
+					
+					imgTitle=imageElement.attr("title")
+					imgTitleName=imgTitle.split("...")[0]
+					imgTitleDescription=imgTitle.split("...").length>1?imgTitle.split("...")[1]:""
+
+					imgSrc=imageElement.attr("src")
+
+					if(imgSrc.indexOf("http://")==-1 && imgSrc.indexOf("https://")==-1)
+					{
+						// http:// or https:// not found, so AlbumFolder relative path
+						//alert(imgSrc)
+						imgSrc="{{site.url}}/{{page.albumFolder}}/" + imgSrc
+						//alert(imgSrc)
+
+
+					}
+					else
+					{
+						//leave alone if absolute path with http:/// or https://
+					}
+
+
+					//console.log(imgSrc)
+					//console.log(imgTitleName)
+					//console.log(imgTitleDescription)
+
+					newArticle=article.clone()
+
+					newArticle.find("img").attr("src",imgSrc)
+					newArticle.find("a").attr("href",imgSrc)
+
+					newArticle.find("h2").html(imgTitleName)
+					newArticle.find("p").html(imgTitleDescription)
+
+					
+					//console.log(newArticle.html())
+
+					$("#thumbnails").append(newArticle)
+				}
+			</script>	
+
+			<script src="{{site.url}}/sampyassets/lens/assets/js/main.js"></script>
+
+			{% if page.albumFolderScan %}
+				<script type="text/javascript">
+					if(sessionStorage.getItem("{{page.albumFolder}}"));
+					else
+						{
+							$("#viewer").remove()
+						}
+				</script>
+			{% endif %}
+	</body>
+</html>
+
+
