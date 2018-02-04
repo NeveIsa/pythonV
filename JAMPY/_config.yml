@@ -22,7 +22,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   mostly in science and technology, DIY, music, magic, 
   psychology and beyond.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "sampy.in" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://sampy.in" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
