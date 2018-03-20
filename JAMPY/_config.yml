@@ -51,3 +51,9 @@ permalink: /:categories/:title/
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+
+webrick:
+  headers:
+    "Access-Control-Allow-Origin": "*"

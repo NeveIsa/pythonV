@@ -298,13 +298,20 @@
 					imgTitleDescription=imgTitle.split("...").length>1?imgTitle.split("...")[1]:""
 
 					imgSrc=imageElement.attr("src")
+					thumbSrc=imageElement.attr("src")
 
 					if(imgSrc.indexOf("http://")==-1 && imgSrc.indexOf("https://")==-1)
 					{
 						// http:// or https:// not found, so AlbumFolder relative path
 						//alert(imgSrc)
+
+						thumbSrc="{{site.url}}/{{page.albumFolder}}/thumbs/" + imgSrc
+
+
 						imgSrc="{{site.url}}/{{page.albumFolder}}/" + imgSrc
 						//alert(imgSrc)
+
+						//imgSrc=thumbSrc;
 
 
 					}
@@ -320,7 +327,7 @@
 
 					newArticle=article.clone()
 
-					newArticle.find("img").attr("src",imgSrc)
+					newArticle.find("img").attr("src",thumbSrc)
 					newArticle.find("a").attr("href",imgSrc)
 
 					newArticle.find("h2").html(imgTitleName)
