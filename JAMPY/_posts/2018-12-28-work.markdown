@@ -55,7 +55,7 @@ systems programming, IO bound vs CPU bound tasks and later coming up with a pipe
 camera using multithreading to address camera IO bottlenecks and comparison of effects of using various image
 filters on computation and accuracy of classification on these SBCs.
 
-###### Keywords: OpenCV, Optical Flow, Image Processing on Multicore, Contiki-OS, Correlation, Background Subtraction,Support Vector Machine
+##### Keywords: OpenCV, Optical Flow, Image Processing on Multicore, Contiki-OS, Correlation, Background Subtraction,Support Vector Machine
 
 Jekyll also offers powerful support for code snippets:
 
