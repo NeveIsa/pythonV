@@ -55,7 +55,10 @@ systems programming, IO bound vs CPU bound tasks and later coming up with a pipe
 camera using multithreading to address camera IO bottlenecks and comparison of effects of using various image
 filters on computation and accuracy of classification on these SBCs.
 
-
+##### Papers: 
+- [Tarun Choubisa, Sampad B. Mohanty, Kodur Krishna Chaitanya, Mohan Kashyap, Sridhar A, Akshay Singh P. Vijay Kumar,
+Fellow, IEEE, “A reduced-complexity, reduced-power camera system for intrusion classification in an outdoor setting”,
+VisionNet - ICACCI, Manipal, 2017 [BEST PAPER]](http://sampy.in:8080/static/docs/PAPERS/Reduced_Complexity_Camera_System_ICACCI_MANIPAL_2017%28BEST_PAPER%29.pdf)
 
 ##### Keywords: OpenCV, Optical Flow, Image Processing on Multicore, Contiki-OS, Correlation, Background Subtraction,Support Vector Machine
 
