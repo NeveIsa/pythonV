@@ -14,7 +14,7 @@ description: RESEARCH WORK
 ### Project Associate, Robert Bosch Centre for Cyber Physical Systems, IISc Bangalore
 ##### Oct 2017 - Present
 ##### Industrial Internet of Things
-##### Supervisor: [Prof. Rajesh Sundaresan](http://www.ece.iisc.ernet.in/~rajeshs/)
+##### Supervisor: [Prof. Rajesh Sundaresan](http://www.ece.iisc.ernet.in/~rajeshs/){:target="_blank"}
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
@@ -23,7 +23,7 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 ### Project Associate, Electrical and Communication Engineering, IISc Bangalore 
 ##### August 2016 – September 2017
-##### WSN for detection and early warning system for wildlife monitoring and protection
+##### WSN in detection and early warning system for wildlife monitoring and protection
 ##### Supervisor: [Prof. P Vijay Kumar](http://www.ece.iisc.ernet.in/~vijay/){:target="_blank"}
 Worked on a low power sensor platform which uses Passive Infrared sensor array for intrusion detection and
 classification between human and animals like big cats. The sensor platform had to be low power and would be
