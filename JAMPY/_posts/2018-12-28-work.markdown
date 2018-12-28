@@ -110,8 +110,8 @@ acquired data to the Vehicle Monitoring Server over GPRS. The codes were develop
 computer which acts as the gateway node, in C++ for the vehicle tracking equipment (mounted on each dumper/vehicle
 to be tracked) and again Python, HTML and JavaScript for the Vehicle Monitoring Server. The system was deployed at
 Jindal Iron Mines at Tensa, Sundergarh Odisha India and has been working since March 2016. The project details can
-be found in my M.Tech thesis which can be accessed at [Thesis](http://nitrjindal.in/static/Thesis.pdf)
-Project Website (Authentication Required – Guest credentials for demo available on request) [site](http://nitrjindal.in)
+be found in my M.Tech thesis which can be accessed at [Thesis.pdf](http://nitrjindal.in/static/Thesis.pdf)
+Project Website (Authentication Required – Guest credentials for demo available on request) : [nitrjindal.in](http://nitrjindal.in)
 
 ##### Papers:
 
