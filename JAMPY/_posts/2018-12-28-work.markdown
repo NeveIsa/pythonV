@@ -102,7 +102,6 @@ More details in my work as Research Assistant in ECE Dept. NIT Rourkela in the y
 ##### Embedded System for Mine Safety and Heavy Earth Moving Vehicle Tracking
 ##### Supervisor: [Prof. Debiprasad P Acharya](http://www.nitrkl.ac.in/EC/~dpacharya/)
 
-
 Funded by Jindal Steel and Power Limited, the project aimed to tackle the problem of near real-time vehicle tracking in
 an open cast mine which suffers from a poor GSM network. I developed both the hardware and software for the system
 to solve this problem using a ZigBee network that collects the position and speed data from vehicles when they are not
@@ -114,7 +113,11 @@ Jindal Iron Mines at Tensa, Sundergarh Odisha India and has been working since M
 be found in my M.Tech thesis which can be accessed at http://nitrjindal.in/static/Thesis.pdf
 Project Website (Authentication Required – Guest credentials for demo available on request) [site](http://nitrjindal.in)
 
+##### Papers:
 
+- Himansu Sekhar Pradhan, Sampad Bhusan Mohanty, Santosh Madhukar Yerme, Paresh Govind Kale, Debiprasad Priyabrata
+Acharya, “Embedded System for mine process monitoring in a network constrained environment using wireless
+communication bridge”, ICMOCE, IIT Bhubaneswar, 2015 [[PDF]](http://dspace.nitrkl.ac.in/dspace/bitstream/2080/2521/1/2015_ICMOCE_HSPardhan_PID3956741.pdf)
 
 
 Jekyll also offers powerful support for code snippets:
