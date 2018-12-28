@@ -25,6 +25,38 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 ##### August 2016 – September 2017
 ##### WSN for detection and early warning system for wildlife monitoring and protection
 
+Worked on a low power sensor platform which uses Passive Infrared sensor array for intrusion detection and
+classification between human and animals like big cats. The sensor platform had to be low power and would be
+running from a solar energy harvesting system. Correlation between a pair of PIR sensors and the signal strength from
+4 other PIR sensors were used as a feature vector and fed to an SVM running on a low power mote (Wismote and
+Zolertia Re-mote) to classify the intrusion as human or animal. Also developed light weight image processing
+techniques for Raspberry Pi Zero to complement the above platform at times of day when temperature gets close to
+body temperature of humans or animals, because PIR performs poorly in such environments. The work involved
+extracting features from video feed which are then fed to an SVM classifier to classify between the Human, Animal
+and vegetation. We achieved a frame rate of 8 fps on Raspberry Pi-Zero, 25 fps on an Orange Pi-Zero using an
+optimized version of the algorithm which provided accuracies of about 93%. An Odroid C2 was also deployed whose
+frame rate was 25fps with a little heavier version of the algorithm for better accuracies reaching 97%. The work also
+involved comparison of various permutations of different image processing/feature extraction techniques like optical
+flow and machine learning models like decision trees, SVM and K- Nearest Neighbour based on their computational
+and energy efficiency while running on different Single Board Computers (SBCs) available like RPi2, RPi3, Odroid C2
+and Orange Pi.
+
+My role in the project spanned many areas including hardware, embedded systems, WSN, computer networking,
+image processing, signal processing and machine learning. On hardware end, I designing the signal conditioning
+multistage filter and amplifier for the PIR sensors and selecting the right ADCs. On the embedded aspect, my
+contribution was towards ADC interfacing of these sensors via I2C to a mote running Contiki-OS (Re-Mote). I also
+contributed in part to develop routines for extracting the energy and correlation features from the PIR signal sampled
+via the ADC in the ContikiOS. On the WSN side, I helped implement UDP client codes on ContikiOS for sending
+decisions from the Re-Mote to application server. I was completely responsible for developing the complementary
+camera platform. A few of my tasks were to implement optical flow using OpenCV, build various features from the
+optical flow vectors and implementing an SVM classifier which uses these features. Also included were tasks for
+optimizing the above systems for running on SBCs to obtain higher frame rates which lead to understanding of
+systems programming, IO bound vs CPU bound tasks and later coming up with a pipelined architecture for the optical
+camera using multithreading to address camera IO bottlenecks and comparison of effects of using various image
+filters on computation and accuracy of classification on these SBCs.
+
+###### Keywords: OpenCV, Optical Flow, Image Processing on Multicore, Contiki-OS, Correlation, Background Subtraction,Support Vector Machine
+
 Jekyll also offers powerful support for code snippets:
 
 {% highlight ruby %}
