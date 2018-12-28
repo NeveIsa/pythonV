@@ -24,7 +24,7 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 ### Project Associate, Electrical and Communication Engineering, IISc Bangalore 
 ##### August 2016 – September 2017
 ##### WSN for detection and early warning system for wildlife monitoring and protection
-##### Supervisor: [Prof. P Vijay Kumar](http://www.ece.iisc.ernet.in/~vijay/)
+##### Supervisor: [Prof. P Vijay Kumar](http://www.ece.iisc.ernet.in/~vijay/){:target="_blank"}
 Worked on a low power sensor platform which uses Passive Infrared sensor array for intrusion detection and
 classification between human and animals like big cats. The sensor platform had to be low power and would be
 running from a solar energy harvesting system. Correlation between a pair of PIR sensors and the signal strength from
