@@ -60,6 +60,22 @@ filters on computation and accuracy of classification on these SBCs.
 Fellow, IEEE, “A reduced-complexity, reduced-power camera system for intrusion classification in an outdoor setting”,
 VisionNet - ICACCI, Manipal, 2017 [BEST PAPER] [[PDF]](http://sampy.in:8080/static/docs/PAPERS/Reduced_Complexity_Camera_System_ICACCI_MANIPAL_2017%28BEST_PAPER%29.pdf)
 
+- Tarun Choubisa, Mohan Kashyap, RN Rithesh, Sampad B Mohanty, “Direction and gender classification using convolutional
+neural network for side-view images captured from a monitored trail”, IEEE ICIIP, Shimla 2017 [BEST PAPER] [[PDF]](http://sampy.in:8080/static/docs/PAPERS/Gender_Classification_using_CNN_ICIIP_2017.pdf)
+
+- Tarun Choubisa, Sampad B. Mohanty, Mohan Kashyap, Kodur Krishna Chaitanya, Sridhar A, P. Vijay Kumar, Fellow, IEEE,
+“LITE: Light-based Intrusion deTection systEm Using an Optical-Camera and a Single Board Computer”, LCN Demos Track,
+IEEE LCN, Singapore, 2017 [[PDF]](http://sampy.in:8080/static/docs/PAPERS/LITE_Light-based%20_Intrusion%20_deTection%20systEm_Demo_Proposal_SenseApp_2017_Singapore.pdf)
+
+- Tarun Choubisa, Mohan Kashyap, Sampad B. Mohanty, P. Vijay Kumar, Fellow, IEEE, “Comparing chirplet-based
+classification with alternate feature-extraction approaches for outdoor intrusion detection using a PIR sensor platform”,
+ICACCI, 2017 [[PDF]](http://sampy.in:8080/static/docs/PAPERS/Comparions_Chirplet_vs_Other_Features_for_Intrusion_Detection_ICACCI_MANIPAL_2017.pdf)
+
+- Tarun Choubisa, Sampad B Mohanty, Mohan Kashyap, Shivangi Gambhir, Kodur Krishna Chaitanya, A Sridhar, P Vijay
+Kumar, “An Optical-Camera Complement to a PIR Sensor Array for Intrusion Detection and Classification in an Outdoor
+Environment”, SenseApp-IEEE LCN, Singapore, 2017 [[PDF]](http://sampy.in:8080/static/docs/PAPERS/Optical_Camera_Intrusion_Classfication_SenseApp_LCN_Singapore_2017.pdf)
+
+
 ##### Keywords: OpenCV, Optical Flow, Image Processing on Multicore, Contiki-OS, Correlation, Background Subtraction,Support Vector Machine
 
 Jekyll also offers powerful support for code snippets:
