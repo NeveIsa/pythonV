@@ -102,6 +102,21 @@ More details in my work as Research Assistant in ECE Dept. NIT Rourkela in the y
 ##### Embedded System for Mine Safety and Heavy Earth Moving Vehicle Tracking
 ##### Supervisor: [Prof. Debiprasad P Acharya](http://www.nitrkl.ac.in/EC/~dpacharya/)
 
+
+Funded by Jindal Steel and Power Limited, the project aimed to tackle the problem of near real-time vehicle tracking in
+an open cast mine which suffers from a poor GSM network. I developed both the hardware and software for the system
+to solve this problem using a ZigBee network that collects the position and speed data from vehicles when they are not
+under GSM coverage and then relays it to a ZigBee node which has access to GSM network and hence uploads the
+acquired data to the Vehicle Monitoring Server over GPRS. The codes were developed using Python for a Raspberry Pi
+computer which acts as the gateway node, in C++ for the vehicle tracking equipment (mounted on each dumper/vehicle
+to be tracked) and again Python, HTML and JavaScript for the Vehicle Monitoring Server. The system was deployed at
+Jindal Iron Mines at Tensa, Sundergarh Odisha India and has been working since March 2016. The project details can
+be found in my M.Tech thesis which can be accessed at http://nitrjindal.in/static/Thesis.pdf
+Project Website (Authentication Required – Guest credentials for demo available on request) [site](http://nitrjindal.in)
+
+
+
+
 Jekyll also offers powerful support for code snippets:
 
 {% highlight ruby %}
