@@ -78,7 +78,7 @@ Environment”, SenseApp-IEEE LCN, Singapore, 2017 [[PDF]](http://sampy.in:8080/
 
 ##### Keywords: OpenCV, Optical Flow, Image Processing on Multicore, Contiki-OS, Correlation, Background Subtraction,Support Vector Machine
 
-===
+---
 ### Project Assistant, Electronics and Communication Engineering, NIT Rourkela 
 ##### June 2016 -July 2016
 ##### Embedded System for Mine Safety and Heavy Earth Moving Vehicle Tracking
@@ -87,6 +87,13 @@ Environment”, SenseApp-IEEE LCN, Singapore, 2017 [[PDF]](http://sampy.in:8080/
 In this period I worked on deploying the system I developed in my M.Tech project “Vehicle Monitoring in Open Cast Mines under Unreliable Cellular Network using ZigBee”. I also helped in the technology and skill transfer to the staffs of the funding company - Jindal Steel and Power - Tensa.
 
 More details in my work as Research Assistant in ECE Dept. NIT Rourkela in the year 2015-2016
+
+
+---
+### Research Assistant, Electronics and Communication Engineering, NIT Rourkela 
+##### June 2016 -July 2016
+##### Embedded System for Mine Safety and Heavy Earth Moving Vehicle Tracking
+##### Supervisor: [Prof. Debiprasad P Acharya](http://www.nitrkl.ac.in/EC/~dpacharya/)
 
 
 Jekyll also offers powerful support for code snippets:
