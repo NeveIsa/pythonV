@@ -22,8 +22,8 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 
 ### Project Associate, Electrical and Communication Engineering, IISc Bangalore 
-###### August 2016 – September 2017
-###### WSN for detection and early warning system for wildlife monitoring and protection
+##### August 2016 – September 2017
+##### WSN for detection and early warning system for wildlife monitoring and protection
 
 Jekyll also offers powerful support for code snippets:
 
