@@ -112,15 +112,13 @@ Acharya, “Embedded System for mine process monitoring in a network constrained
 communication bridge”, ICMOCE, IIT Bhubaneswar, 2015 [[PDF]](http://dspace.nitrkl.ac.in/dspace/bitstream/2080/2521/1/2015_ICMOCE_HSPardhan_PID3956741.pdf)
 
 
-Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+---
+### Research Assistant, Electronics and Communication Engineering, NIT Rourkela 
+##### June 2016 -July 2016
+##### Embedded System for Mine Safety and Heavy Earth Moving Vehicle Tracking
+##### Supervisor: [Prof. Debiprasad P Acharya](http://www.nitrkl.ac.in/EC/~dpacharya/)
+
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
