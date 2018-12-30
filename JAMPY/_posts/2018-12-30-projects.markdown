@@ -20,7 +20,7 @@ description: PROJECTS
 
 ---
 
-2. ### NITR BalloonSat - Onboard Computing and Telemetry Team Lead
+2. ### Dual Tone Multi Frequency Remote Firework Detonator
 ##### May 2014 - July 2015 | Wireless Sensor Networks / Embedded Systems | Satellite Lab, Dept. of ECE, NIT Rourkela
 
 
