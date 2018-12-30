@@ -113,11 +113,22 @@ communication bridge”, ICMOCE, IIT Bhubaneswar, 2015 [[PDF]](http://dspace.nit
 ---
 ### Founding Member and Lead Embedded and Network Developer at [PheonixRobotix](https://pheonixrobotix.com)
 ##### [Aurassure](https://aurassure.com) and [TraDe](https://phoenixrobotix.com/trade-gprs)
-##### Supervisor: [Prof. Debiprasad P Acharya](http://www.nitrkl.ac.in/EC/~dpacharya/)
 
+###### AURASSURE
+One of the first team member of the startup Pheonix Robotix (spin off from the Balloon Satellite Lab at NIT
+Rourkela and the Air Quality Sensor Network team) where I worked as the lead embedded developer after
+class hours. I managed a team of 3 developers to develop the software stack for an Air Quality Monitoring
+Kit called AURASURRE (https://aurassure.com). I also led the networking of the devices with the State
+Pollution Control Boards (SPCB, Govt. of Odisha, India) pollution monitoring servers during which I visited and
+interacted with the SPCB technical staff to develop an API for the same. My work also included writing driver
+codes on Arduino for various air quality sensors including sensors from the well-known company Alphasense.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+###### Online Pollution Monitoring of Soft Iron Manufacturing Plants (later called product “TRADE”)
+I was responsible for developing embedded code on Arduino platform for interfacing a hardware device we
+developed at PhoenixRobotix which collected pollution data like SO 2 and particulate matter from the
+Electrostatic Precipitator and uploaded it to the Orissa State Pollution Control Boards Server over GPRS for
+continuous monitoring of the pollution. All transmissions were encrypted using AES encryption and a custom
+application packet was used to be sent over TCP. HTTP was not used deliberately to decrease data usage due
+to header overheads. The device used industry standard 4ma-20ma current loop for collection of data from
+the sensors. Finally a generic device named TRADE was developed which could be easily deployed in any
+similar factory and start transmitting data without much manual configuration.
