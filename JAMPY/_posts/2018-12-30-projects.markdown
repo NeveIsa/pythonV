@@ -16,9 +16,8 @@ description: RESEARCH WORK
 ##### Embedded Systems
 ##### Courtesy: Synergy Dance Club, NIT Rourkela
 
-<iframe width="100%" height="50%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-<iframe width="100%" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
+
+<iframe width="100%" height="50%" src="https://www.youtube.com/embed/pvK5bv_WdX4i?start=417" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
