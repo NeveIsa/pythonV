@@ -32,7 +32,7 @@ description: PROJECTS
 ##### May 2014 - July 2015 | Wireless Sensor Networks / Embedded Systems | Satellite Lab, Dept. of ECE, NIT Rourkela
 
 
-<img src="https://drive.google.com/file/d/0B4HCzyjSj0bNSThUeE96dElwVFU/view?usp=sharing" alt="NITRUtsav 2014 Performance" width="100%" height="70%">
+<img src="https://doc-0s-30-docs.googleusercontent.com/docs/securesc/3q08sggg6so0ssk02utq2thvsph7jqg6/hkv3vqhppqqgtvm2tvart8q16lm24feh/1546156800000/05650587388563850849/05650587388563850849/0B4HCzyjSj0bNSThUeE96dElwVFU?e=download&nonce=sc98mp881fe16&user=05650587388563850849&hash=79ihubqh6db4kqh3tlvnpbtohi150arm" alt="NITRUtsav 2014 Performance" width="100%" height="70%">
 
 
 ---
