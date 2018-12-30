@@ -13,7 +13,7 @@ description: RESEARCH WORK
 1. ### LED Art Dance Project
 ##### Feb 2014 | Embedded Systems | Synergy Dance Club, NIT Rourkela
 
-[ok](https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/1924404_10201340623933025_1126068851_n.jpg?_nc_cat=109&_nc_ht=scontent-bom1-1.xx&oh=52a4a0d2663069eb42916f1c29a7067c&oe=5C8E2DA9)
+![ok](https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/1924404_10201340623933025_1126068851_n.jpg?_nc_cat=109&_nc_ht=scontent-bom1-1.xx&oh=52a4a0d2663069eb42916f1c29a7067c&oe=5C8E2DA9)
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/pvK5bv_WdX4?start=417" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
