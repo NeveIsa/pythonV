@@ -114,7 +114,7 @@ communication bridge”, ICMOCE, IIT Bhubaneswar, 2015 [[PDF]](http://dspace.nit
 ### Founding Member and Lead Embedded and Network Developer at [PheonixRobotix](https://pheonixrobotix.com)
 ##### [Aurassure](https://aurassure.com) and [TraDe](https://phoenixrobotix.com/trade-gprs)
 
-###### AURASSURE
+###### ** AURASSURE **
 One of the first team member of the startup Pheonix Robotix (spin off from the Balloon Satellite Lab at NIT
 Rourkela and the Air Quality Sensor Network team) where I worked as the lead embedded developer after
 class hours. I managed a team of 3 developers to develop the software stack for an Air Quality Monitoring
@@ -123,7 +123,7 @@ Pollution Control Boards (SPCB, Govt. of Odisha, India) pollution monitoring ser
 interacted with the SPCB technical staff to develop an API for the same. My work also included writing driver
 codes on Arduino for various air quality sensors including sensors from the well-known company Alphasense.
 
-###### ONLINE POLLUTION MONITORING OF SOFT IRON MANUFACTURING PLANTS (LATER CALLED PRODUCT “TRADE”)
+###### ** ONLINE POLLUTION MONITORING OF SOFT IRON MANUFACTURING PLANTS (LATER CALLED PRODUCT “TRADE”) **
 I was responsible for developing embedded code on Arduino platform for interfacing a hardware device we
 developed at PhoenixRobotix which collected pollution data like SO 2 and particulate matter from the
 Electrostatic Precipitator and uploaded it to the Orissa State Pollution Control Boards Server over GPRS for
