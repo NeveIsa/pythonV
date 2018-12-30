@@ -17,7 +17,7 @@ description: RESEARCH WORK
 ##### Courtesy: Synergy Dance Club, NIT Rourkela
 
 <iframe width="420" height="100%" src="https://youtu.be/pvK5bv_WdX4?t=417"></iframe>
-<iframe width="420" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+<iframe width="100%" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
 </iframe>
 
 
