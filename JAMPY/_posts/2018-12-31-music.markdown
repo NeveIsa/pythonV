@@ -1,0 +1,17 @@
+---
+layout: post
+#title:  "Welcome to Jekyll!"
+#date:   2018-01-04 22:36:56 +0530
+categories: music
+author: sampad
+comments: true
+
+description: SoundCloud
+---
+
+### COVERS
+
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/552145575&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+
+
