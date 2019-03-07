@@ -19,7 +19,7 @@ description: RESEARCH WORK
 #### Links ->
 1. [Industrial IoT Stack Implementation Details (Github)](https://github.com/NeveIsa/RBCCPS/tree/master/docs/iiot-gateway){:target="_blank"}
 
-
+2. [Network Layout (Github)](https://github.com/NeveIsa/RBCCPS/blob/master/docs/network/Network%20Architecture.pdf){:target="_blank"}
 
 ---
 ### Project Associate, Electrical and Communication Engineering, IISc Bangalore 
