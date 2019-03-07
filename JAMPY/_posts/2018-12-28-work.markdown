@@ -17,8 +17,7 @@ description: RESEARCH WORK
 ##### Supervisor: [Prof. Rajesh Sundaresan](http://www.ece.iisc.ernet.in/~rajeshs/){:target="_blank"}
 
 
-
-[Industrial IoT Stack Implementation Details] (https://github.com/NeveIsa/RBCCPS/tree/master/docs/iiot-gateway)
+[Industrial IoT Stack Implementation Details](https://github.com/NeveIsa/RBCCPS/tree/master/docs/iiot-gateway){:target="_blank"}
 
 
 
