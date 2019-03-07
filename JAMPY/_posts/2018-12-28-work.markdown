@@ -18,7 +18,7 @@ description: RESEARCH WORK
 
 
 
-*[Industrial IoT Stack Implementation Details]* (https://github.com/NeveIsa/RBCCPS/tree/master/docs/iiot-gateway)
+[Industrial IoT Stack Implementation Details] (https://github.com/NeveIsa/RBCCPS/tree/master/docs/iiot-gateway)
 
 
 
