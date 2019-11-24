@@ -1,0 +1,34 @@
+I"û<style type="text/css">
+	.img-book
+	{
+		height: 30%;
+		width: 20%;
+	}
+
+	tr
+	{
+		vertical-align: top;
+	}
+
+</style>
+
+<h3 id="my-list-of-inspiring-books">My List of Inspiring Books</h3>
+<p><br /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><span class="image left img-book"><img src="https://images-na.ssl-images-amazon.com/images/I/816Oatk1WJL.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. andit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td><span class="image left img-book"><img src="https://images-na.ssl-images-amazon.com/images/I/519fWd56vTL._SX323_BO1,204,203,200_.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsa.</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET
